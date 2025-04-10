@@ -16,7 +16,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
-    "postcss-preset-env": "^7.8.3",
+    "postcss-preset-env": "^8.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
@@ -35,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@csstools/postcss-ic-unit": "^2.0.2"
   }
 }
