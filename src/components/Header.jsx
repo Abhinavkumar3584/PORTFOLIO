@@ -1,5 +1,4 @@
 import React from 'react';
-import ParticleBackground from './ParticleBackground';
 
 const Header = () => {
   const expertise = [
@@ -101,9 +100,6 @@ const Header = () => {
 
   return (
     <div className="relative bg-black border border-gray-400 rounded-lg p-4 md:p-8 overflow-hidden">
-      {/* Particle Background */}
-      <ParticleBackground />
-      
       {/* Diagonal Line Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
