@@ -1,0 +1,243 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .social-icon {
+    @apply relative flex items-center justify-center w-8 h-8 md:w-9 md:h-9 bg-white rounded-full shadow-md transition-all duration-300 cursor-pointer hover:shadow-lg z-10;
+  }
+
+  .social-icon-bg {
+    @apply absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300;
+  }
+
+  .section-title {
+    @apply text-xl md:text-2xl font-bold mb-2 md:mb-3 text-gray-800 border-b pb-1;
+  }
+
+  .skill-card {
+    @apply flex items-center p-1.5 md:p-2 bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .expertise-box {
+    @apply flex items-center gap-1 bg-gray-50 p-1 rounded-lg shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+
+  .btn-primary {
+    @apply px-4 py-1.5 md:px-5 md:py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors duration-300;
+  }
+
+  .download-btn {
+    @apply relative h-10 md:h-11 w-28 md:w-32 bg-red-600 rounded-full overflow-hidden hover:bg-red-700 transition-colors duration-300;
+  }
+  
+  /* Mobile sidebar styles */
+  .mobile-sidebar {
+    @apply fixed bottom-0 left-0 right-0 z-50 bg-white shadow-lg p-2 flex justify-around items-center border-t border-gray-200;
+    height: 60px;
+  }
+  
+  .mobile-nav-item {
+    @apply flex flex-col items-center justify-center text-xs text-gray-600;
+  }
+  
+  .mobile-nav-icon {
+    @apply text-lg mb-0.5;
+  }
+  
+  /* Custom sticky sidebar styles */
+  @media (min-width: 768px) {
+    .sticky-sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh; /* Full viewport height */
+      overflow-y: auto;
+      scrollbar-width: thin;
+      margin: 0; /* Remove margin */
+      padding: 0.5rem; /* Adjust padding */
+    }
+    
+    /* Custom scrollbar for webkit browsers */
+    .sticky-sidebar::-webkit-scrollbar {
+      width: 3px;
+    }
+    
+    .sticky-sidebar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+    
+    .sticky-sidebar::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+    }
+    
+    .sticky-sidebar::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
+  
+  /* Full height sidebar container - only on desktop */
+  .sidebar-container {
+    @apply py-0 my-0;
+    min-height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .sidebar-container {
+      @apply h-screen sticky top-0;
+      min-height: 100vh;
+    }
+  }
+  
+  /* Sticky navbar styles */
+  .sticky-nav {
+    @apply bg-white rounded-xl shadow-md transition-all duration-300;
+  }
+  
+  .sticky-nav.scrolled {
+    @apply shadow-xl rounded-b-xl;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  /* Content container styles */
+  .content-container {
+    @apply bg-black rounded-xl shadow-lg p-2 md:p-3;
+  }
+  
+  /* Section spacing */
+  .section-wrapper {
+    @apply mb-4 md:mb-6 last:mb-0;
+  }
+}
+
+/* For the gradient text effect */
+.gradient-text {
+  @apply font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500;
+  background-size: 300% 100%;
+  animation: gradient-x 10s ease infinite;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, 
+      #ff0000, #ff7f00, #ffff00, #7fff00, 
+      #00ff00, #00ff7f, #00ffff, #007fff, 
+      #0000ff, #7f00ff, #ff00ff, #ff007f);
+  background-size: 400% 400%;
+  animation: gradient-x 10s ease infinite;
+}
+
+/* Animation for gradient */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Line animations */
+.animated-line {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, transparent, #4ade80, transparent);
+  transition: width 0.7s ease;
+}
+
+.animated-line:hover::before {
+  width: 100%;
+}
+
+/* Animated section borders */
+.animate-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-border::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: -100%;
+  background: linear-gradient(90deg, transparent, #4ade80, #3b82f6, transparent);
+  animation: border-flow 3s linear infinite;
+}
+
+@keyframes border-flow {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Animated highlights for sections */
+.highlight-line {
+  position: relative;
+}
+
+.highlight-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, #4ade80, transparent);
+  transition: height 0.5s ease;
+}
+
+.highlight-line:hover::before {
+  height: 80%;
+  top: 10%;
+}
+
+/* Text justified properly */
+.text-justified {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Smooth scrolling and transitions */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Section transitions */
+.section-transition {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 767px) {
+  .mobile-pb-safe {
+    padding-bottom: 70px; /* Safe area for mobile nav */
+  }
+  
+  html {
+    scroll-padding-top: 3rem;
+  }
+}
