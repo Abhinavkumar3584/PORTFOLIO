@@ -8,9 +8,9 @@ const ProjectsSection = () => {
       logo: 'https://img.icons8.com/color/48/000000/university.png',
       technologies: 'HTML, CSS, JavaScript, SQL, React',
       details: [
-        'Developed a web platform enabling students to sell, purchase, and exchange products conveniently.',
-        'Integrated features to access previous year papers, facilitating academic preparation.',
-        'Designed functionality to locate nearby accommodations, enhancing student convenience.'
+        'Created a platform where students can buy, sell, and exchange products',
+        'Added access to previous year exam papers to help with exam preparation',
+        'Built feature to find nearby student accommodations'
       ]
     },
     {
@@ -19,9 +19,9 @@ const ProjectsSection = () => {
       logo: 'https://img.icons8.com/color/48/000000/book-stack.png',
       technologies: 'HTML, CSS, JavaScript, React',
       details: [
-        'Developed a web platform to present government exam syllabi in a mind-map format.',
-        'Implemented React and Node.js for dynamic and efficient data rendering.',
-        'Enhanced user experience with interactive navigation and visual organization of content.'
+        'Built a platform showing government exam syllabi in interactive mind-maps',
+        'Used React and Node.js for dynamic content presentation',
+        'Designed intuitive navigation for easy topic exploration'
       ]
     },
     {
@@ -30,9 +30,9 @@ const ProjectsSection = () => {
       logo: 'https://img.icons8.com/color/48/000000/tractor.png',
       technologies: 'Data analysis tools (e.g., Python, Excel)',
       details: [
-        'Conducted an in-depth analysis of Agritech startups, identifying growth trends and challenges.',
-        'Examined the advantages of technology integration in the agricultural sector.',
-        'Presented findings through detailed visualizations and actionable insights.'
+        'Analyzed growth trends and challenges of agricultural technology startups',
+        'Studied impact of technology integration in farming sector',
+        'Created visual data presentations with actionable insights'
       ]
     },
     {
@@ -41,9 +41,9 @@ const ProjectsSection = () => {
       logo: 'https://img.icons8.com/color/48/000000/cloud-computing.png',
       technologies: 'React.js, Node.js',
       details: [
-        'Engineered a global monitoring system for personal servers, with a Django backend for system resource data collection.',
-        'Frontend created with React.js for real-time data visualization and user interaction.',
-        'Integrated Node.js for user authentication and MongoDB for secure data storage.'
+        'Built server monitoring system with Django backend for data collection',
+        'Developed React.js frontend for real-time resource visualization',
+        'Added user authentication and MongoDB database integration'
       ]
     },
     {
@@ -52,9 +52,9 @@ const ProjectsSection = () => {
       logo: 'https://img.icons8.com/color/48/000000/health-graph.png',
       technologies: 'Python, Machine Learning',
       details: [
-        'Created a project on Women Diabetes Prediction using Machine Learning.',
-        'Applied data preprocessing techniques and feature engineering to improve model accuracy.',
-        'Implemented various classification algorithms to identify the best model for prediction.'
+        'Developed ML model to predict diabetes risk in women',
+        'Applied data preprocessing and feature engineering techniques',
+        'Tested multiple classification algorithms to find best prediction model'
       ]
     },
     {
@@ -63,9 +63,9 @@ const ProjectsSection = () => {
       logo: 'https://img.icons8.com/color/48/000000/chatbot.png',
       technologies: 'Python, Langchain, OpenAI',
       details: [
-        'Developed a NCERT Chatbot that helps UPSC aspirants find information from NCERT books from class 6th to 12th.',
-        'Leveraged Langchain and OpenAI models to create an intelligent question-answering system.',
-        'Optimized response quality and retrieval speed for a seamless user experience.'
+        'Built AI chatbot to help UPSC aspirants find information from NCERT textbooks',
+        'Used Langchain and OpenAI models for intelligent question answering',
+        'Optimized response quality and search speed for better user experience'
       ]
     }
   ];

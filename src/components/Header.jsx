@@ -91,7 +91,7 @@ const Header = () => {
           <path d="M8 12h8"></path>
         </svg>
       ), 
-      text: 'ML Frameworks',
+      text: 'Prompt Engineering',
       color: 'text-cyan-400',
       borderColor: 'hover:border-cyan-400',
       hoverText: 'group-hover:text-cyan-400'
@@ -117,8 +117,11 @@ const Header = () => {
         </h1>
         
         <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-          A passionate <span className="text-green-400">front-end developer</span> dedicated to crafting immersive digital experiences. 
-          With hands-on experience in building intelligent systems and a background in IT and Mathematical Innovation from the University of Delhi.
+          A tech innovator and <span className="text-green-400">full-stack developer</span> with a passion for creating impactful digital solutions. 
+          Currently pursuing B.Tech in Information Technology and Mathematical Innovation at the University of Delhi, 
+          I combine technical expertise with entrepreneurial vision to build AI-powered educational platforms and user-friendly web applications. 
+          My experience spans from founding <span className="text-green-400">Pratiyogita Setu</span> to developing intelligent chatbots and 
+          creating data-driven solutions for real-world problems.
         </p>
       </div>
       

@@ -13,11 +13,10 @@ const ExperienceSection = () => {
       location: 'India',
       logo: 'https://img.icons8.com/color/48/000000/launched-rocket--v1.png',
       points: [
-        'Launched an AI-powered exam preparation platform to help aspirants prepare efficiently for competitive exams.',
-        'Developed Pariksha Yogya, an eligibility and attempt tracker to help students understand their exam qualifications.',
-        'Designed Pariksha Marg, a structured syllabus roadmap for systematic and effective learning.',
-        'Built Pariksha Gyan, an AI chatbot that provides real-time explanations, topic-wise PYQs, and Q&A insights.',
-        'Integrated NCERT-based learning with AI-driven insights to deliver personalized and cost-effective exam preparation solutions.'
+        'Created an AI-powered exam prep platform with personalized study resources for competitive exams',
+        'Developed Pariksha Yogya for tracking exam eligibility and attempt limits',
+        'Built Pariksha Marg, a structured roadmap for efficient syllabus learning',
+        'Launched Pariksha Gyan, an AI chatbot providing explanations and practice questions'
       ]
     },
     {
@@ -27,10 +26,9 @@ const ExperienceSection = () => {
       location: 'India',
       logo: 'https://img.icons8.com/color/48/000000/shop.png',
       points: [
-        'Developed an e-commerce platform for selling stationery and railway essentials.',
-        'Designed and implemented a user-friendly interface for seamless online shopping.',
-        'Integrated secure payment gateways and inventory management features to improve operational efficiency.',
-        'Focused on optimizing website performance and ensuring a smooth customer experience.'
+        'Built e-commerce platform for stationery and railway essentials with user-friendly interface',
+        'Integrated secure payment systems and inventory management features',
+        'Optimized website performance for seamless customer experience'
       ]
     },
     {
@@ -40,9 +38,9 @@ const ExperienceSection = () => {
       location: 'Delhi, India',
       logo: 'https://img.icons8.com/color/48/000000/university.png',
       points: [
-        'Developed an AI-powered educational chatbot integrating NLP models (Google-BERT, Sentence Transformers) and vector databases (Pinecone) to retrieve precise answers from NCERT content and competitive exam PYQs (UPSC, SSC, CDS, Railways).',
-        'Implemented a full-stack web application using Django, JavaScript, HTML, and CSS, enabling users to query structured datasets and receive contextually accurate responses efficiently.',
-        'Optimized data preprocessing and query matching algorithms, ensuring seamless retrieval of structured educational content, improving accessibility and accuracy for students and aspirants.'
+        'Developed an educational AI chatbot using NLP models (BERT, Sentence Transformers) for accurate answers',
+        'Built full-stack web application with Django backend and JavaScript frontend',
+        'Optimized algorithms for seamless retrieval of educational content from NCERT books and exam questions'
       ]
     },
     {
@@ -50,10 +48,10 @@ const ExperienceSection = () => {
       position: 'Subject Matter Expert',
       date: 'Sept 2023 - Present',
       location: 'Remote',
-      logo: cheggLogo, // Updated to use imported logo
+      logo: cheggLogo,
       points: [
-        'Solved complex problems related to Data Structures and Algorithms, Database Systems, Computer Networking, and Programming.',
-        'Successfully addressed over 100+ questions, providing detailed explanations and solutions.'
+        'Solved 100+ complex problems in Data Structures, Algorithms, Database Systems, and Networking',
+        'Provided detailed explanations to help students master technical concepts'
       ]
     },
     {
@@ -61,11 +59,11 @@ const ExperienceSection = () => {
       position: 'AI YouTube Video Classifier',
       date: 'July 2022 - Nov 2022',
       location: 'Delhi, India',
-      logo: beyondExamsLogo, // Updated to use imported logo
+      logo: beyondExamsLogo,
       points: [
-        'Built an AI model using Python and Scikit-learn to classify YouTube videos as educational or non-educational.',
-        'Developed a user-friendly website and initiated a Chrome extension for seamless video classification.',
-        'Provided an API for developers to integrate video classification features into applications.'
+        'Built AI classification model using Python and Scikit-learn to identify educational content',
+        'Developed user-friendly website and Chrome extension for content classification',
+        'Created API for developers to integrate video classification into their applications'
       ]
     }
   ];
