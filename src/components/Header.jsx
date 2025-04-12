@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Header = () => {
+  const { darkMode } = useContext(ThemeContext);
+
   const expertise = [
     { 
       icon: (
@@ -99,7 +102,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="relative bg-black border border-gray-400 rounded-lg p-4 md:p-8 overflow-hidden">
+    <div className="relative bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden">
       {/* Diagonal Line Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -110,17 +113,17 @@ const Header = () => {
       </div>
       
       {/* Introduction Text */}
-      <div className="text-white mb-6 md:mb-10 max-w-3xl mx-auto relative z-10">
+      <div className="text-gray-800 dark:text-gray-200 mb-6 md:mb-10 max-w-3xl mx-auto relative z-10">
         <h1 className="text-3xl md:text-4xl font-bold mb-3 md:mb-4 flex flex-wrap items-center">
-          <span className="mr-2">👋</span>
-          Hi, I'm <span className="ml-2 text-green-400 animated-line">Abhinav Kumar</span>
+          <span className="mr-2 animate-waving-hand">👋</span>
+          Hi, I'm <span className="ml-2 text-green-500 dark:text-green-400 animated-line">Abhinav Kumar</span>
         </h1>
         
-        <p className="text-gray-300 leading-relaxed text-base md:text-lg">
-          A tech innovator and <span className="text-green-400">full-stack developer</span> with a passion for creating impactful digital solutions. 
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
+          A tech innovator and <span className="text-green-500 dark:text-green-400">full-stack developer</span> with a passion for creating impactful digital solutions. 
           Currently pursuing B.Tech in Information Technology and Mathematical Innovation at the University of Delhi, 
           I combine technical expertise with entrepreneurial vision to build AI-powered educational platforms and user-friendly web applications. 
-          My experience spans from founding <span className="text-green-400">Pratiyogita Setu</span> to developing intelligent chatbots and 
+          My experience spans from founding <span className="text-green-500 dark:text-green-400">Pratiyogita Setu</span> to developing intelligent chatbots and 
           creating data-driven solutions for real-world problems.
         </p>
       </div>
@@ -130,17 +133,36 @@ const Header = () => {
         {expertise.map((item, index) => (
           <div 
             key={index} 
-            className={`border border-gray-400 rounded-md p-2 md:p-3 flex flex-col items-center ${item.borderColor} transition-colors duration-300 text-center group`}
+            className={`border border-gray-300 dark:border-gray-600 rounded-md p-2 md:p-3 flex flex-col items-center ${item.borderColor} transition-colors duration-300 text-center group`}
           >
             <div className={`${item.color} transition-colors duration-300`}>
               {item.icon}
             </div>
-            <div className={`text-xs text-gray-400 mt-2 font-medium ${item.hoverText} transition-colors duration-300`}>
+            <div className={`text-xs text-gray-500 dark:text-gray-300 mt-2 font-medium ${item.hoverText} transition-colors duration-300`}>
               {item.text}
             </div>
           </div>
         ))}
       </div>
+      
+      {/* CSS for Waving Animation */}
+      <style jsx>{`
+        @keyframes waving {
+          0% { transform: rotate(0deg); }
+          10% { transform: rotate(14deg); }
+          20% { transform: rotate(-8deg); }
+          30% { transform: rotate(14deg); }
+          40% { transform: rotate(-4deg); }
+          50% { transform: rotate(10deg); }
+          60% { transform: rotate(0deg); }
+          100% { transform: rotate(0deg); }
+        }
+        .animate-waving-hand {
+          animation: waving 2s infinite;
+          transform-origin: 70% 70%;
+          display: inline-block;
+        }
+      `}</style>
     </div>
   );
 };

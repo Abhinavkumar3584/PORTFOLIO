@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class', // Enable class-based dark mode
   theme: {
     extend: {
       colors: {
@@ -10,6 +11,9 @@ module.exports = {
         secondary: '#e73c3c',
         dark: '#333333',
         light: '#f5f5f5',
+      },
+      backgroundSize: {
+        'size-200': '200% 200%',
       },
       animation: {
         'gradient-x': 'gradient-x 10s ease infinite',

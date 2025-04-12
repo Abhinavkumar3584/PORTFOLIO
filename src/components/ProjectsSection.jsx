@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const ProjectsSection = () => {
+  const { darkMode } = useContext(ThemeContext);
+
   const projects = [
     {
       name: 'Need DU',
@@ -71,7 +74,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" className="mb-12 relative bg-black border border-gray-400 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto">
+    <section id="projects" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background - Similar to Header */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -81,32 +84,32 @@ const ProjectsSection = () => {
         </div>
       </div>
       
-      <h2 className="text-2xl font-bold text-white mb-6 inline-block border-b-2 border-green-400 pb-1 relative z-10">Projects</h2>
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
         {projects.map((project, index) => (
-          <div key={index} className="bg-black rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 hover:border-green-400">
+          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500">
             <div className="p-5">
               <div className="flex items-center mb-3">
                 <img src={project.logo} alt={project.name} className="w-10 h-10 mr-3" />
-                <h3 className="font-bold text-lg text-gray-200">{project.name}</h3>
+                <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100">{project.name}</h3>
               </div>
-              <div className="text-right mb-3 text-green-400 font-medium border-b border-gray-700 pb-2">
+              <div className="text-right mb-3 text-green-500 dark:text-green-400 font-medium border-b border-gray-300 dark:border-gray-600 pb-2">
                 {project.description}
               </div>
-              <p className="text-xs text-gray-400 italic mb-3 text-right">Tech Stack: {project.technologies}</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400 italic mb-3 text-right font-medium">Tech Stack: {project.technologies}</p>
               <div className="space-y-3">
                 <ul className="list-disc pl-5 space-y-2">
                   {project.details.map((detail, idx) => (
-                    <li key={idx} className="text-gray-300 text-sm text-justified">
+                    <li key={idx} className="text-gray-700 dark:text-gray-200 text-sm font-medium text-justified">
                       {detail}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="bg-gray-900 px-5 py-3 border-t border-gray-700 flex justify-between items-center">
-              <span className="text-xs text-gray-500">{`PROJECT ${index + 1}`}</span>
-              <button className="text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
+            <div className="bg-gray-100 dark:bg-gray-700 px-5 py-3 border-t border-gray-300 dark:border-gray-600 flex justify-between items-center">
+              <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">{`PROJECT ${index + 1}`}</span>
+              <button className="text-green-500 dark:text-green-400 text-sm font-medium hover:text-green-600 dark:hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
                 View Project 
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

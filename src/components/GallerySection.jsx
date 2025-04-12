@@ -1,28 +1,35 @@
-import React from 'react';
-import abhi from '../assets/images/abhi.jpg';
-import beyondexams from '../assets/images/beyondexams.png';
-import chegg from '../assets/images/chegg.jfif';
-import ncc from '../assets/images/ncc.png';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+// Import gallery images
+import img1 from '../assets/images/gallery/IMG-20191215-WA0008.jpg';
+import img2 from '../assets/images/gallery/PicsArt_10-08-07.16.44.jpg';
+import img3 from '../assets/images/gallery/rahul_abhinav.jpg';
+import img4 from '../assets/images/gallery/rmsa.jpg';
+import img5 from '../assets/images/gallery/rmsa1.jpg';
+import img6 from '../assets/images/gallery/rmsa2.jpg';
 
-// Duplicating images to create a more populated gallery
+// Gallery images with appropriate heights for the grid
 const images = [
-  { src: abhi, alt: 'Profile Photo', className: 'object-cover h-48 w-full' },
-  { src: beyondexams, alt: 'Beyond Exams', className: 'object-contain h-32 w-full' },
-  { src: chegg, alt: 'Chegg', className: 'object-contain h-40 w-full' },
-  { src: ncc, alt: 'NCC', className: 'object-cover h-36 w-full' },
-  { src: abhi, alt: 'Profile Photo', className: 'object-cover h-52 w-full' },
-  { src: beyondexams, alt: 'Beyond Exams', className: 'object-contain h-36 w-full' },
-  { src: chegg, alt: 'Chegg', className: 'object-contain h-44 w-full' },
-  { src: ncc, alt: 'NCC', className: 'object-cover h-40 w-full' },
-  { src: abhi, alt: 'Profile Photo', className: 'object-cover h-48 w-full' },
-  { src: beyondexams, alt: 'Beyond Exams', className: 'object-contain h-38 w-full' },
-  { src: chegg, alt: 'Chegg', className: 'object-contain h-42 w-full' },
-  { src: ncc, alt: 'NCC', className: 'object-cover h-36 w-full' },
+  { src: img1, alt: 'Gallery Image 1', className: 'object-cover h-48 w-full' },
+  { src: img2, alt: 'Gallery Image 2', className: 'object-cover h-40 w-full' },
+  { src: img3, alt: 'Rahul Abhinav', className: 'object-cover h-52 w-full' },
+  { src: img4, alt: 'RMSA Image', className: 'object-cover h-44 w-full' },
+  { src: img5, alt: 'RMSA Image 1', className: 'object-cover h-36 w-full' },
+  { src: img6, alt: 'RMSA Image 2', className: 'object-cover h-48 w-full' },
+  // Repeated to have enough images for a good scrolling effect
+  { src: img1, alt: 'Gallery Image 1', className: 'object-cover h-40 w-full' },
+  { src: img2, alt: 'Gallery Image 2', className: 'object-cover h-52 w-full' },
+  { src: img3, alt: 'Rahul Abhinav', className: 'object-cover h-44 w-full' },
+  { src: img4, alt: 'RMSA Image', className: 'object-cover h-36 w-full' },
+  { src: img5, alt: 'RMSA Image 1', className: 'object-cover h-48 w-full' },
+  { src: img6, alt: 'RMSA Image 2', className: 'object-cover h-40 w-full' },
 ];
 
 const GallerySection = () => {
+  const { darkMode } = useContext(ThemeContext);
+  
   return (
-    <section id="gallery" className="mb-12 relative bg-black border border-gray-400 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto">
+    <section id="gallery" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -32,7 +39,7 @@ const GallerySection = () => {
         </div>
       </div>
       
-      <h2 className="text-2xl font-bold text-white mb-6 inline-block border-b-2 border-green-400 pb-1 relative z-10">
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">
         Gallery
       </h2>
       
@@ -44,7 +51,7 @@ const GallerySection = () => {
             {images.map((img, index) => (
               <div 
                 key={`row1-${index}`} 
-                className="flex-shrink-0 rounded-lg overflow-hidden border border-gray-700 hover:border-green-400 transition-all"
+                className="flex-shrink-0 rounded-lg overflow-hidden border-2 border-gray-400 dark:border-gray-600 hover:border-green-500 transition-all shadow-sm"
               >
                 <img 
                   src={img.src} 
@@ -57,7 +64,7 @@ const GallerySection = () => {
             {images.map((img, index) => (
               <div 
                 key={`row1-dup-${index}`} 
-                className="flex-shrink-0 rounded-lg overflow-hidden border border-gray-700 hover:border-green-400 transition-all"
+                className="flex-shrink-0 rounded-lg overflow-hidden border-2 border-gray-400 dark:border-gray-600 hover:border-green-500 transition-all shadow-sm"
               >
                 <img 
                   src={img.src} 
@@ -75,7 +82,7 @@ const GallerySection = () => {
             {images.slice().reverse().map((img, index) => (
               <div 
                 key={`row2-${index}`} 
-                className="flex-shrink-0 rounded-lg overflow-hidden border border-gray-700 hover:border-green-400 transition-all"
+                className="flex-shrink-0 rounded-lg overflow-hidden border-2 border-gray-400 dark:border-gray-600 hover:border-green-500 transition-all shadow-sm"
               >
                 <img 
                   src={img.src} 
@@ -88,7 +95,7 @@ const GallerySection = () => {
             {images.slice().reverse().map((img, index) => (
               <div 
                 key={`row2-dup-${index}`} 
-                className="flex-shrink-0 rounded-lg overflow-hidden border border-gray-700 hover:border-green-400 transition-all"
+                className="flex-shrink-0 rounded-lg overflow-hidden border-2 border-gray-400 dark:border-gray-600 hover:border-green-500 transition-all shadow-sm"
               >
                 <img 
                   src={img.src} 

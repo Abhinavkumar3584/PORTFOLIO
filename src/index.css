@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Static glow effect for navbar instead of animation */
+.flashlight-effect {
+  box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.7);
+  background: linear-gradient(90deg, rgba(74, 222, 128, 0.2), rgba(74, 222, 128, 0.6), rgba(74, 222, 128, 0.2));
+}
+
 @layer components {
   .social-icon {
     @apply relative flex items-center justify-center w-8 h-8 md:w-9 md:h-9 bg-white rounded-full shadow-md transition-all duration-300 cursor-pointer hover:shadow-lg z-10;
@@ -107,7 +113,7 @@
   
   /* Content container styles */
   .content-container {
-    @apply bg-black rounded-xl shadow-lg p-2 md:p-3;
+    @apply bg-transparent rounded-xl shadow-lg p-2 md:p-3;
   }
   
   /* Section spacing */
@@ -239,5 +245,10 @@ body {
   
   html {
     scroll-padding-top: 3rem;
+  }
+  
+  /* Fix large margins in mobile view for components */
+  .section-wrapper {
+    @apply mb-2 last:mb-0;
   }
 }

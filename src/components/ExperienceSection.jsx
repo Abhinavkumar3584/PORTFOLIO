@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 // Import images from assets folder
 import cheggLogo from '../assets/images/chegg.jfif';
 import beyondExamsLogo from '../assets/images/beyondexams.png';
 import nccLogo from '../assets/images/ncc.png';
 
 const ExperienceSection = () => {
+  const { darkMode } = useContext(ThemeContext);
+
   const experiences = [
     {
       company: 'Pratiyogita Setu',
@@ -69,7 +72,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="mb-12 relative bg-black border border-gray-400 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto">
+    <section id="experience" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background - Similar to Header */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -79,35 +82,35 @@ const ExperienceSection = () => {
         </div>
       </div>
       
-      <h2 className="text-2xl font-bold text-white mb-6 inline-block border-b-2 border-green-400 pb-1 relative z-10">Experience</h2>
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Experience</h2>
       <div className="space-y-4 relative z-10">
         {experiences.map((exp, index) => (
-          <div key={index} className="bg-black rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400">
+          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700">
             <div className="p-5">
-              <div className="flex items-center mb-3">
-                <img src={exp.logo} alt={exp.company} className="w-10 h-10 object-contain mr-3" />
-                <div>
-                  <h3 className="font-bold text-lg text-gray-200">{exp.company}</h3>
-                  <p className="text-green-400 font-medium">{exp.position}</p>
-                 
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center">
+                  <img src={exp.logo} alt={exp.company} className="w-10 h-10 object-contain mr-3" />
+                  <div>
+                    <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100">{exp.company}</h3>
+                    <p className="text-green-500 dark:text-green-400 font-medium">{exp.position}</p>
+                  </div>
                 </div>
+                <span className="text-sm text-gray-600 dark:text-gray-400 italic font-medium">{exp.date}</span>
               </div>
-              <div className="text-right mb-3 text-gray-400 italic text-sm border-b border-gray-700 pb-2">
-                {exp.position} • {exp.date}
-              </div>
-              <div className="space-y-3 text-gray-300">
+              <div className="w-full h-px bg-gray-400 dark:bg-gray-600 mb-3"></div>
+              <div className="space-y-3 text-gray-700 dark:text-gray-200">
                 <ul className="list-disc pl-5 space-y-2">
                   {exp.points.map((point, idx) => (
-                    <li key={idx} className="text-sm sm:text-base text-justified">
+                    <li key={idx} className="text-sm sm:text-base text-justified font-medium">
                       {point}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <div className="bg-gray-900 px-5 py-3 border-t border-gray-700 flex justify-between items-center">
-              <span className="text-xs text-gray-500">{`0${index + 1}`}</span>
-              <button className="text-green-400 text-sm font-medium hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
+            <div className="bg-gray-100 dark:bg-gray-700 px-5 py-3 border-t border-gray-300 dark:border-gray-600 flex justify-between items-center">
+              <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">{`0${index + 1}`}</span>
+              <button className="text-green-500 dark:text-green-400 text-sm font-medium hover:text-green-600 dark:hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
                 Learn More 
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
