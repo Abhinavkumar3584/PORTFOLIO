@@ -8,7 +8,7 @@ const EducationSection = () => {
     {
       degree: 'B.Tech (IT & Mathematical Innovation)',
       institution: 'Cluster Innovation Centre, University of Delhi',
-      period: '2021 - Present',
+      period: '2021 - Present(2025)',
       logo: 'https://img.icons8.com/color/48/000000/graduation-cap.png',
       details: [
         'CGPA: 8.0/10',
