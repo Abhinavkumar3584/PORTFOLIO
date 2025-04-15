@@ -16,10 +16,10 @@ const ExperienceSection = () => {
       location: 'India',
       logo: 'https://img.icons8.com/color/48/000000/launched-rocket--v1.png',
       points: [
-        'Created an AI-powered exam prep platform with personalized study resources for competitive exams',
-        'Developed Pariksha Yogya for tracking exam eligibility and attempt limits',
-        'Built Pariksha Marg, a structured roadmap for efficient syllabus learning',
-        'Launched Pariksha Gyan, an AI chatbot providing explanations and practice questions'
+        'Conceptualized and built an AI-powered exam preparation platform to streamline and personalize learning for competitive exam aspirants',
+        'Developed innovative tools like Pariksha Yogya for eligibility tracking, Pariksha Marg for dynamic syllabus roadmaps, and Pariksha Gyan AI chatbot',
+        'Engineered AI solutions that deliver real-time explanations and personalized insights using NCERT content and past year questions',
+        'Combined educational content with AI to democratize access to effective and affordable preparation tools'
       ]
     },
     {
@@ -29,21 +29,23 @@ const ExperienceSection = () => {
       location: 'India',
       logo: 'https://img.icons8.com/color/48/000000/shop.png',
       points: [
-        'Built e-commerce platform for stationery and railway essentials with user-friendly interface',
-        'Integrated secure payment systems and inventory management features',
-        'Optimized website performance for seamless customer experience'
+        'Developed a complete e-commerce solution tailored to selling stationery and railway essentials',
+        'Designed clean, user-friendly frontend interfaces and implemented secure payment gateways',
+        'Integrated inventory management functionalities and optimized performance for seamless customer experience',
+        'Ensured responsive design to provide consistent user experience across all devices'
       ]
     },
     {
       company: 'Cluster Innovation Centre, University of Delhi',
-      position: 'AI and ML, Chatbot Development',
+      position: 'AI/ML Intern',
       date: 'July 2024 - Nov 2024',
       location: 'Delhi, India',
       logo: 'https://img.icons8.com/color/48/000000/university.png',
       points: [
-        'Developed an educational AI chatbot using NLP models (BERT, Sentence Transformers) for accurate answers',
-        'Built full-stack web application with Django backend and JavaScript frontend',
-        'Optimized algorithms for seamless retrieval of educational content from NCERT books and exam questions'
+        'Developed an AI-powered educational chatbot using NLP technologies including Google-BERT and Sentence Transformers',
+        'Leveraged vector databases like Pinecone for smart content retrieval from NCERT material and government exam datasets',
+        'Built a full-stack application with Django backend and JavaScript frontend providing instant, accurate responses',
+        'Optimized system for improved data accessibility and accuracy for UPSC, SSC, and other competitive exam preparation'
       ]
     },
     {
@@ -53,20 +55,23 @@ const ExperienceSection = () => {
       location: 'Remote',
       logo: cheggLogo,
       points: [
-        'Solved 100+ complex problems in Data Structures, Algorithms, Database Systems, and Networking',
-        'Provided detailed explanations to help students master technical concepts'
+        'Provided detailed, concept-driven solutions for 100+ academic problems in DSA, DBMS, Networks, and Programming',
+        'Emphasized clarity and depth in answers to enhance student understanding and confidence',
+        'Maintained high-quality standards while explaining complex technical concepts in accessible language',
+        'Consistently received positive feedback for comprehensive explanations and problem-solving approach'
       ]
     },
     {
       company: 'BeyondExams',
-      position: 'AI YouTube Video Classifier',
+      position: 'AI Developer',
       date: 'July 2022 - Nov 2022',
       location: 'Delhi, India',
       logo: beyondExamsLogo,
       points: [
-        'Built AI classification model using Python and Scikit-learn to identify educational content',
-        'Developed user-friendly website and Chrome extension for content classification',
-        'Created API for developers to integrate video classification into their applications'
+        'Developed a Python-based AI classifier to identify whether YouTube videos are educational or non-educational',
+        'Trained models using Scikit-learn to accurately categorize content for educational platforms',
+        'Extended the project into a web application and Chrome extension for broader accessibility',
+        'Created and exposed an API allowing developers to integrate the classifier into their own platforms'
       ]
     }
   ];

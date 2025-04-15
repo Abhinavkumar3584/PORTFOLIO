@@ -13,9 +13,23 @@ const ActivitiesSection = () => {
       location: 'Delhi, India',
       logo: nccLogo,
       details: [
-        'Completed CATC (Combined Annual Training Camp), 2022 with Sergeant rank, leading and managing a team of cadets.',
-        'Completed CATC (Combined Annual Training Camp), 2023 with Cadet rank, leading and managing a team of cadets.',
-        'Completed All India UP Trekking Camp with Company 2IC, commanding a team of 101 cadets.'
+        'Led teams in CATC (Combined Annual Training Camp) 2022 with rank of Sergeant',
+        'Participated in CATC (Combined Annual Training Camp) 2023 with rank of Cadet',
+        'Served as 2IC (Second-in-Command) at All India UP Trekking Camp, leading a team of 101 cadets',
+        'Developed discipline, leadership skills, and teamwork through rigorous military training'
+      ]
+    },
+    {
+      name: 'Academic Achievements',
+      role: 'Student',
+      period: '2019 - Present',
+      location: 'India',
+      logo: 'https://img.icons8.com/color/48/000000/medal--v1.png',
+      details: [
+        'Qualified for Rashtriya Military School and Sainik School in Class 9 competitive exams',
+        'Selected among top 50 candidates for B.Tech program at Cluster Innovation Centre, University of Delhi',
+        'Achieved 4th place in Hack2Educate hackathon organized by Beyond Exams',
+        'Core Team Member for Convoke 5.0 Hackathon, handling logistics and planning operations'
       ]
     }
   ];
@@ -31,7 +45,7 @@ const ActivitiesSection = () => {
         </div>
       </div>
       
-      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Other Activities</h2>
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Achievements & Activities</h2>
       <div className="space-y-6 relative z-10">
         {activities.map((activity, index) => (
           <div key={index} className="bg-white dark:bg-gray-800 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -56,7 +70,7 @@ const ActivitiesSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="bg-gray-100 dark:bg-gray-700 px-5 py-3 border-t border-gray-300 dark:border-gray-600 flex justify-between items-center">
+            {/* <div className="bg-gray-100 dark:bg-gray-700 px-5 py-3 border-t border-gray-300 dark:border-gray-600 flex justify-between items-center">
               <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">ACTIVITY</span>
               <button className="text-green-500 dark:text-green-400 text-sm font-medium hover:text-green-600 dark:hover:text-green-300 transition-colors duration-300 flex items-center gap-1">
                 More Details 
@@ -64,7 +78,7 @@ const ActivitiesSection = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

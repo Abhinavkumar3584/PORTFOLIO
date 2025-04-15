@@ -6,69 +6,56 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      name: 'Need DU',
-      description: 'Web platform for Delhi University students',
-      logo: 'https://img.icons8.com/color/48/000000/university.png',
-      technologies: 'HTML, CSS, JavaScript, SQL, React',
-      details: [
-        'Created a platform where students can buy, sell, and exchange products',
-        'Added access to previous year exam papers to help with exam preparation',
-        'Built feature to find nearby student accommodations'
+      title: 'Need DU',
+      description: 'A web-based platform supporting Delhi University students to buy, sell, and exchange goods, find accommodations, and access previous year papers.',
+      image: 'https://img.icons8.com/ios-filled/50/000000/university.png',
+      tags: ['React', 'HTML/CSS', 'SQL'],
+      link: '#',
+      points: [
+        'Built a comprehensive platform enabling students to conveniently buy, sell, and exchange goods',
+        'Implemented features for finding nearby accommodations to support student housing needs',
+        'Created a repository of previous year papers to support academic preparation',
+        'Used React, HTML/CSS, and SQL to create a seamless and intuitive user experience with real-time data updates'
       ]
     },
     {
-      name: 'KnowYourSyllabus',
-      description: 'Government exam syllabus platform',
-      logo: 'https://img.icons8.com/color/48/000000/book-stack.png',
-      technologies: 'HTML, CSS, JavaScript, React',
-      details: [
-        'Built a platform showing government exam syllabi in interactive mind-maps',
-        'Used React and Node.js for dynamic content presentation',
-        'Designed intuitive navigation for easy topic exploration'
+      title: 'KnowYourSyllabus',
+      description: 'Centralized platform with interactive mind-maps for exploring government exam syllabi.',
+      image: 'https://img.icons8.com/ios-filled/50/000000/mind-map.png',
+      tags: ['React', 'Node.js', 'Mind-mapping'],
+      link: '#',
+      points: [
+        'Tackled the problem of scattered and confusing government exam content by creating a centralized platform',
+        'Designed interactive mind-maps to help users explore exam syllabi in a visually organized way',
+        'Built with React and Node.js to create a fast and responsive user experience',
+        'Helped aspirants better plan their study paths with visual clarity and structured information'
       ]
     },
     {
-      name: 'Analysis of Agritech Startups in India',
-      description: 'Research on agricultural technology startups',
-      logo: 'https://img.icons8.com/color/48/000000/tractor.png',
-      technologies: 'Data analysis tools (e.g., Python, Excel)',
-      details: [
-        'Analyzed growth trends and challenges of agricultural technology startups',
-        'Studied impact of technology integration in farming sector',
-        'Created visual data presentations with actionable insights'
+      title: 'Agritech Startup Analysis',
+      description: 'Data analysis of trends, challenges, and technology opportunities in Indian agricultural startups.',
+      image: 'https://img.icons8.com/ios-filled/50/000000/tractor.png',
+      tags: ['Python', 'Excel', 'Data Analysis'],
+      link: '#',
+      points: [
+        'Conducted deep data analysis on the Indian agricultural startup ecosystem',
+        'Uncovered trends, challenges, and technology opportunities within the agritech space',
+        'Used Python and Excel for sophisticated data processing and visualization',
+        'Produced valuable insights for investors, researchers, and policy-makers in the agricultural sector'
       ]
     },
     {
-      name: 'Cloud Resource Manager Software',
-      description: 'Monitoring system for personal servers',
-      logo: 'https://img.icons8.com/color/48/000000/cloud-computing.png',
-      technologies: 'React.js, Node.js',
-      details: [
-        'Built server monitoring system with Django backend for data collection',
-        'Developed React.js frontend for real-time resource visualization',
-        'Added user authentication and MongoDB database integration'
-      ]
-    },
-    {
-      name: 'Women Diabetes Prediction',
-      description: 'Machine learning model for diabetes prediction',
-      logo: 'https://img.icons8.com/color/48/000000/health-graph.png',
-      technologies: 'Python, Machine Learning',
-      details: [
-        'Developed ML model to predict diabetes risk in women',
-        'Applied data preprocessing and feature engineering techniques',
-        'Tested multiple classification algorithms to find best prediction model'
-      ]
-    },
-    {
-      name: 'NCERT Chatbot',
-      description: 'AI-powered educational assistant',
-      logo: 'https://img.icons8.com/color/48/000000/chatbot.png',
-      technologies: 'Python, Langchain, OpenAI',
-      details: [
-        'Built AI chatbot to help UPSC aspirants find information from NCERT textbooks',
-        'Used Langchain and OpenAI models for intelligent question answering',
-        'Optimized response quality and search speed for better user experience'
+      title: 'Cloud Resource Manager',
+      description: 'Tool for global monitoring of personal server usage and performance with real-time visualization.',
+      image: 'https://img.icons8.com/ios-filled/50/000000/cloud-computing.png',
+      tags: ['Django', 'React.js', 'Node.js', 'MongoDB'],
+      link: '#',
+      points: [
+        'Developed a tool for global monitoring of personal server usage and performance metrics',
+        'Created Django backend to collect live system metrics from distributed computing resources',
+        'Built React.js frontend to visualize resource data in real-time dashboards',
+        'Implemented user authentication with Node.js and secure data storage with MongoDB',
+        'Delivered a complete resource management solution with both visual and analytical capabilities'
       ]
     }
   ];
@@ -90,18 +77,18 @@ const ProjectsSection = () => {
           <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500">
             <div className="p-5">
               <div className="flex items-center mb-3">
-                <img src={project.logo} alt={project.name} className="w-10 h-10 mr-3" />
-                <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100">{project.name}</h3>
+                <img src={project.image} alt={project.title} className="w-10 h-10 mr-3" />
+                <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100">{project.title}</h3>
               </div>
               <div className="text-right mb-3 text-green-500 dark:text-green-400 font-medium border-b border-gray-300 dark:border-gray-600 pb-2">
                 {project.description}
               </div>
-              <p className="text-xs text-gray-600 dark:text-gray-400 italic mb-3 text-right font-medium">Tech Stack: {project.technologies}</p>
+              <p className="text-xs text-gray-600 dark:text-gray-400 italic mb-3 text-right font-medium">Tech Stack: {project.tags.join(', ')}</p>
               <div className="space-y-3">
                 <ul className="list-disc pl-5 space-y-2">
-                  {project.details.map((detail, idx) => (
+                  {project.points.map((point, idx) => (
                     <li key={idx} className="text-gray-700 dark:text-gray-200 text-sm font-medium text-justified">
-                      {detail}
+                      {point}
                     </li>
                   ))}
                 </ul>

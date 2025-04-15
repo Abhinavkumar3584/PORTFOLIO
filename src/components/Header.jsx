@@ -16,7 +16,8 @@ const Header = () => {
       text: 'Frontend Development',
       color: 'text-blue-400',
       borderColor: 'hover:border-blue-400',
-      hoverText: 'group-hover:text-blue-400'
+      hoverText: 'group-hover:text-blue-400',
+      gradient: 'from-blue-500/10 to-blue-500/5'
     },
     { 
       icon: (
@@ -30,7 +31,8 @@ const Header = () => {
       text: 'Data Analysis',
       color: 'text-purple-400',
       borderColor: 'hover:border-purple-400',
-      hoverText: 'group-hover:text-purple-400'
+      hoverText: 'group-hover:text-purple-400',
+      gradient: 'from-purple-500/10 to-purple-500/5'
     },
     { 
       icon: (
@@ -43,7 +45,8 @@ const Header = () => {
       text: 'R&D',
       color: 'text-orange-400',
       borderColor: 'hover:border-orange-400',
-      hoverText: 'group-hover:text-orange-400'
+      hoverText: 'group-hover:text-orange-400',
+      gradient: 'from-orange-500/10 to-orange-500/5'
     },
     { 
       icon: (
@@ -55,7 +58,8 @@ const Header = () => {
       text: 'UI/UX Design',
       color: 'text-green-400',
       borderColor: 'hover:border-green-400',
-      hoverText: 'group-hover:text-green-400'
+      hoverText: 'group-hover:text-green-400',
+      gradient: 'from-green-500/10 to-green-500/5'
     },
     { 
       icon: (
@@ -71,7 +75,8 @@ const Header = () => {
       text: 'AI & ML',
       color: 'text-pink-400',
       borderColor: 'hover:border-pink-400',
-      hoverText: 'group-hover:text-pink-400'
+      hoverText: 'group-hover:text-pink-400',
+      gradient: 'from-pink-500/10 to-pink-500/5'
     },
     { 
       icon: (
@@ -84,7 +89,8 @@ const Header = () => {
       text: 'Innovation',
       color: 'text-yellow-400',
       borderColor: 'hover:border-yellow-400',
-      hoverText: 'group-hover:text-yellow-400'
+      hoverText: 'group-hover:text-yellow-400',
+      gradient: 'from-yellow-500/10 to-yellow-500/5'
     },
     { 
       icon: (
@@ -97,7 +103,27 @@ const Header = () => {
       text: 'Prompt Engineering',
       color: 'text-cyan-400',
       borderColor: 'hover:border-cyan-400',
-      hoverText: 'group-hover:text-cyan-400'
+      hoverText: 'group-hover:text-cyan-400',
+      gradient: 'from-cyan-500/10 to-cyan-500/5'
+    },
+    { 
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect>
+          <path d="M7 2v20"></path>
+          <path d="M17 2v20"></path>
+          <path d="M2 12h20"></path>
+          <path d="M2 7h5"></path>
+          <path d="M2 17h5"></path>
+          <path d="M17 17h5"></path>
+          <path d="M17 7h5"></path>
+        </svg>
+      ), 
+      text: 'Graphic Designing',
+      color: 'text-indigo-400',
+      borderColor: 'hover:border-indigo-400',
+      hoverText: 'group-hover:text-indigo-400',
+      gradient: 'from-indigo-500/10 to-indigo-500/5'
     },
   ];
 
@@ -120,29 +146,35 @@ const Header = () => {
         </h1>
         
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
-          A tech innovator and <span className="text-green-500 dark:text-green-400">full-stack developer</span> with a passion for creating impactful digital solutions. 
-          Currently pursuing B.Tech in Information Technology and Mathematical Innovation at the University of Delhi, 
-          I combine technical expertise with entrepreneurial vision to build AI-powered educational platforms and user-friendly web applications. 
-          My experience spans from founding <span className="text-green-500 dark:text-green-400">Pratiyogita Setu</span> to developing intelligent chatbots and 
-          creating data-driven solutions for real-world problems.
+          A passionate developer and innovator from Delhi. Currently pursuing a B.Tech in Information Technology and Mathematical Innovation at the 
+          <span className="text-green-500 dark:text-green-400"> Cluster Innovation Centre, University of Delhi</span>. 
+          I specialize in frontend development, data analysis, and AI-powered solutions. With a strong foundation in problem-solving and an 
+          entrepreneurial mindset, I'm driven by the potential of technology to empower education and improve lives.
         </p>
       </div>
       
       {/* Expertise Areas with Different Colors */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 md:gap-3 relative z-10">
-        {expertise.map((item, index) => (
-          <div 
-            key={index} 
-            className={`border border-gray-300 dark:border-gray-600 rounded-md p-2 md:p-3 flex flex-col items-center ${item.borderColor} transition-colors duration-300 text-center group`}
-          >
-            <div className={`${item.color} transition-colors duration-300`}>
-              {item.icon}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 md:gap-3 relative z-10">
+        {expertise.map((item, index) => {
+          // Extract color name from the text color class and make a darker version for border
+          const colorBase = item.color.split('-')[1]; // e.g. "blue" from "text-blue-400"
+          const borderColorClass = `border-${colorBase}-${darkMode ? '600' : '500'}`; // Darker shade for border
+          
+          return (
+            <div 
+              key={index} 
+              className={`border-2 ${borderColorClass} rounded-md p-2 md:p-3 flex flex-col items-center transition-all duration-300 text-center group bg-gradient-to-br ${item.gradient} shadow-sm hover:shadow-md overflow-hidden`}
+            >
+              <div className={`${item.color} transition-transform duration-300 group-hover:scale-110`}>
+                {item.icon}
+              </div>
+              <div className={`text-xs mt-2 font-medium ${item.color} transition-all duration-300`}>
+                {item.text}
+              </div>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-tr from-white via-current to-white transition-opacity duration-300"></div>
             </div>
-            <div className={`text-xs text-gray-500 dark:text-gray-300 mt-2 font-medium ${item.hoverText} transition-colors duration-300`}>
-              {item.text}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       
       {/* CSS for Waving Animation */}

@@ -6,6 +6,8 @@ import SkillsSection from './components/SkillsSection';
 import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
 import CertificationsSection from './components/CertificationsSection';
+import EducationSection from './components/EducationSection';
+import HobbiesSection from './components/HobbiesSection';
 import ActivitiesSection from './components/ActivitiesSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
@@ -52,11 +54,17 @@ function App() {
                 <section className="section-wrapper" id="projects">
                   <ProjectsSection />
                 </section>
+                <section className="section-wrapper" id="education">
+                  <EducationSection />
+                </section>
                 <section className="section-wrapper" id="certification">
                   <CertificationsSection />
                 </section>
                 <section className="section-wrapper" id="activities">
                   <ActivitiesSection />
+                </section>
+                <section className="section-wrapper" id="hobbies">
+                  <HobbiesSection />
                 </section>
                 <section className="section-wrapper" id="gallery">
                   <GallerySection />
