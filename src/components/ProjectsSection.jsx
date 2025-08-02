@@ -56,9 +56,9 @@ const ProjectsSection = () => {
             <div className="p-5">
               <div className="flex items-center mb-3">
                 <img src={project.image} alt={project.title} className="w-10 h-10 mr-3" />
-                <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100">{project.title}</h3>
+                <h3 className="font-bold text-base md:text-lg text-gray-800 dark:text-gray-100">{project.title}</h3>
               </div>
-              <div className="text-right mb-3 text-green-500 dark:text-green-400 font-medium border-b border-gray-300 dark:border-gray-600 pb-2">
+              <div className="text-right mb-3 text-green-500 dark:text-green-400 font-medium border-b border-gray-300 dark:border-gray-600 pb-2 text-sm md:text-base">
                 {project.description}
               </div>
               <p className="text-xs text-gray-600 dark:text-gray-400 italic mb-3 text-right font-medium">Tech Stack: {project.tags.join(', ')}</p>

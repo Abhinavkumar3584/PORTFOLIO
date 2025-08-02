@@ -132,11 +132,11 @@ const ExperienceSection = () => {
                 <div className="flex items-center">
                   <img src={exp.logo} alt={exp.company} className="w-10 h-10 object-contain mr-3" />
                   <div>
-                    <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100">{exp.company}</h3>
-                    <p className="text-green-500 dark:text-green-400 font-medium">{exp.position}</p>
+                    <h3 className="font-bold text-base md:text-lg text-gray-800 dark:text-gray-100">{exp.company}</h3>
+                    <p className="text-green-500 dark:text-green-400 font-medium text-sm md:text-base">{exp.position}</p>
                   </div>
                 </div>
-                <span className="text-sm text-gray-600 dark:text-gray-400 italic font-medium">{exp.date}</span>
+                <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400 italic font-medium">{exp.date}</span>
               </div>
               <div className="w-full h-px bg-gray-400 dark:bg-gray-600 mb-3"></div>
               <div className="space-y-3 text-gray-700 dark:text-gray-200">
