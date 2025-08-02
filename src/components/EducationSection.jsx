@@ -6,40 +6,38 @@ const EducationSection = () => {
 
   const education = [
     {
-      degree: 'B.Tech (IT & Mathematical Innovation)',
-      institution: 'Cluster Innovation Centre, University of Delhi',
-      period: '2021 - Present(2025)',
+      degree: 'B.tech (Information Technology and Mathematical Innovation)',
+      institution: 'Cluster Innovation centre, University of delhi',
+      period: 'Nov 2021 - June 2025',
+      location: 'Delhi, India',
       logo: 'https://img.icons8.com/color/48/000000/graduation-cap.png',
       details: [
-        'CGPA: 8.0/10',
-        'Selected among top 50 students for this specialized program',
-        'Core team member for Convoke 5.0 Hackathon (Logistics & Planning)'
+        'CGPA: 8.24/10'
       ]
     },
     {
       degree: 'Intermediate',
-      institution: 'Maa Bhargwati International School, Bulandshahr',
-      period: '2021',
+      institution: 'Maa Bhargwati International School',
+      period: 'March 2021',
+      location: 'Bulandshahr, India',
       logo: 'https://img.icons8.com/color/48/000000/school.png',
       details: [
-        'Completed intermediate education with distinction',
-        'Focused on science and mathematics'
+        'Completed intermediate education'
       ]
     },
     {
-      degree: 'Secondary',
+      degree: 'Secondary Education',
       institution: 'Rashtriya Military School, Ajmer',
-      period: '2019',
+      period: 'March 2019',
+      location: 'Ajmer, India',
       logo: 'https://img.icons8.com/color/48/000000/military-medal.png',
       details: [
-        'Qualified for military school through competitive examination',
-        'Developed discipline, leadership skills and team-building capabilities'
+        'Completed secondary education'
       ]
     }
   ];
-
   return (
-    <section id="education" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
+    <section id="education" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-3xl p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -52,8 +50,7 @@ const EducationSection = () => {
       <div className="relative z-10">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1">Education</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {education.map((edu, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500">
+          {education.map((edu, index) => (            <div key={index} className="bg-white dark:bg-gray-800 rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500">
               <div className="p-5">
                 <div className="flex items-center mb-3">
                   <img src={edu.logo} alt={edu.institution} className="w-12 h-12 object-contain mr-4" />

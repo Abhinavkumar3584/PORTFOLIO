@@ -104,7 +104,7 @@
   
   /* Sticky navbar styles */
   .sticky-nav {
-    @apply bg-white rounded-xl shadow-md transition-all duration-300;
+    @apply bg-white rounded-3xl shadow-md transition-all duration-300;
   }
   
   .sticky-nav.scrolled {

@@ -1,44 +1,34 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 
-const HobbiesSection = () => {
+const AchievementsSection = () => {
   const { darkMode } = useContext(ThemeContext);
 
-  const hobbies = [
+  const achievements = [
     {
-      name: 'Reading',
-      icon: 'https://img.icons8.com/color/48/000000/book.png',
-      description: 'Technology, sci-fi, personal development'
+      title: 'Military School Achievement',
+      icon: 'https://img.icons8.com/color/48/000000/military-medal.png',
+      description: 'Cleared All India Rashtriya Military School Entrance Exam and Sainik School Entrance Exam.'
     },
     {
-      name: 'Photography',
-      icon: 'https://img.icons8.com/color/48/000000/camera.png',
-      description: 'Moments, landscapes, creative angles'
+      title: 'University Selection',
+      icon: 'https://img.icons8.com/color/48/000000/graduation-cap.png',
+      description: 'Selected for B.Tech (Information Technology and Mathematical Innovation) at Cluster Innovation Centre, University of Delhi, among 50 seats.'
     },
     {
-      name: 'Chess',
-      icon: 'https://img.icons8.com/color/48/000000/chess.png',
-      description: 'Strategic thinking, problem-solving'
+      title: 'Hackathon Achievement',
+      icon: 'https://img.icons8.com/color/48/000000/trophy.png',
+      description: 'Secured fourth position in hackathon organized by Beyond Exams.'
     },
     {
-      name: 'Hiking',
-      icon: 'https://img.icons8.com/color/48/000000/trekking.png',
-      description: 'Nature trails, mountains, adventure'
-    },
-    {
-      name: 'Coding',
-      icon: 'https://img.icons8.com/color/48/000000/code.png',
-      description: 'Web apps, small projects, automation'
-    },
-    {
-      name: 'Music',
-      icon: 'https://img.icons8.com/color/48/000000/musical-notes.png',
-      description: 'Classical, rock, instrumental'
+      title: 'Event Management',
+      icon: 'https://img.icons8.com/color/48/000000/conference.png',
+      description: 'Core team member of college hackathon (Convoke 5.0) organizing team, managing logistics and event planning.'
     }
   ];
 
   return (
-    <section id="hobbies" className="mb-8 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-3 md:p-5 overflow-hidden max-w-full mx-auto shadow-md">
+    <section id="achievements" className="mb-8 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-3xl p-3 md:p-5 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -49,15 +39,17 @@ const HobbiesSection = () => {
       </div>
       
       <div className="relative z-10">
-        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1">Hobbies & Interests</h2>
+        <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-4 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1">Achievements and Position of Responsibility</h2>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-          {hobbies.map((hobby, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-md shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-300 dark:border-gray-700 hover:border-green-500">
-              <div className="p-3 flex flex-col items-center">
-                <img src={hobby.icon} alt={hobby.name} className="w-10 h-10 object-contain mb-2" />
-                <h3 className="font-bold text-sm text-gray-800 dark:text-gray-100 mb-1">{hobby.name}</h3>
-                <p className="text-gray-700 dark:text-gray-300 text-xs text-center leading-tight">{hobby.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {achievements.map((achievement, index) => (
+            <div key={index} className="bg-white dark:bg-gray-800 rounded-3xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-300 dark:border-gray-700 hover:border-green-500">
+              <div className="p-4 flex items-start gap-3">
+                <img src={achievement.icon} alt={achievement.title} className="w-10 h-10 object-contain flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="font-bold text-sm text-gray-800 dark:text-gray-100 mb-2">{achievement.title}</h3>
+                  <p className="text-gray-700 dark:text-gray-300 text-xs leading-relaxed">{achievement.description}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -67,4 +59,4 @@ const HobbiesSection = () => {
   );
 };
 
-export default HobbiesSection;
+export default AchievementsSection;

@@ -26,7 +26,8 @@ const Navbar = () => {
     { label: 'PROJECTS', href: '#projects', id: 'projects' },
     { label: 'EDUCATION', href: '#education', id: 'education' },
     { label: 'CERTIFICATES', href: '#certification', id: 'certification' },
-    { label: 'HOBBIES', href: '#hobbies', id: 'hobbies' },
+    { label: 'ACTIVITIES', href: '#activities', id: 'activities' },
+    { label: 'ACHIEVEMENTS', href: '#achievements', id: 'achievements' },
     { label: 'GALLERY', href: '#gallery', id: 'gallery' },
   ];
 
@@ -132,12 +133,10 @@ const Navbar = () => {
     boxShadow: '0 -5px 20px rgba(0, 0, 0, 0.1)',
   };
 
-  return (
-    <>
-      {/* Desktop Navigation */}
-      <nav className={`fixed md:static bottom-0 left-2 right-2 z-10 py-3 md:py-3 px-4 md:px-2 mb-2 md:mb-0 
-        ${darkMode ? 'bg-white text-gray-800 border-gray-300' : 'bg-gray-800 text-white border-gray-700'} 
-        border md:border rounded-full md:rounded-lg shadow-md transition-colors duration-300
+  return (    <>      {/* Desktop Navigation */}      
+    <nav className={`fixed md:static bottom-0 left-2 right-2 z-10 py-3 md:py-3 px-4 md:px-2 mb-2 md:mb-0 
+        ${darkMode ? ' text-gray-800 border-gray-300' : 'bg-gray-800 text-white border-gray-700'} 
+        border md:border rounded-3xl md:rounded-3xl shadow-md transition-colors duration-300
         ${isMobile ? 'hidden' : 'flex'}`}
         style={noSelectStyle}>
         <ul className="flex justify-between flex-nowrap overflow-x-auto gap-1 md:gap-2 w-full">
@@ -147,15 +146,14 @@ const Navbar = () => {
               <li key={index} className="flex-shrink-0">
                 <a 
                   href={item.href} 
-                  onClick={() => handleNavClick(item.id)}
-                  className={`relative block px-1.5 md:px-2 p-2 
+                  onClick={() => handleNavClick(item.id)}                  className={`relative block px-1.5 md:px-2 p-2 
                     ${isActive 
                       ? 'text-green-500 dark:text-green-400 font-bold' 
                       : darkMode ? 'text-gray-800' : 'text-gray-200'} 
                     ${darkMode 
                       ? 'hover:bg-gray-100' 
                       : 'hover:bg-gray-700'} 
-                    rounded-md transition-colors duration-200 text-xs md:text-base whitespace-nowrap overflow-hidden`}
+                    rounded-3xl transition-colors duration-200 text-xs md:text-base whitespace-nowrap overflow-hidden`}
                   style={noSelectStyle}
                 >
                   {item.label}
@@ -178,12 +176,11 @@ const Navbar = () => {
           {/* Dark/Light Mode Toggle Button for Desktop */}
           <li className="flex-shrink-0">
             <button 
-              onClick={toggleTheme}
-              className={`block px-1.5 md:px-2 py-1 
+              onClick={toggleTheme}              className={`block px-1.5 md:px-2 py-1 
                 ${darkMode 
                   ? 'text-gray-800 hover:bg-gray-100' 
                   : 'text-gray-200 hover:bg-gray-700'} 
-                rounded-md transition-colors duration-200 font-medium text-xs md:text-base whitespace-nowrap`}
+                rounded-3xl transition-colors duration-200 font-medium text-xs md:text-base whitespace-nowrap`}
               aria-label="Toggle dark mode"
               style={noSelectStyle}
             >

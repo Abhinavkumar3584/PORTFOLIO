@@ -128,7 +128,7 @@ const Header = () => {
   ];
 
   return (
-    <div className="relative bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden">
+    <div className="relative bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-3xl p-4 md:p-8 overflow-hidden">
       {/* Diagonal Line Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -146,12 +146,15 @@ const Header = () => {
         </h1>
         
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
-          A passionate developer and innovator from Delhi. Currently pursuing a B.Tech in Information Technology and Mathematical Innovation at the 
+          A passionate developer and innovator from Delhi. I have recently graduated with a B.Tech in Information Technology and Mathematical Innovation from the 
           <span className="text-green-500 dark:text-green-400"> Cluster Innovation Centre, University of Delhi</span>. 
-          I specialize in frontend development, data analysis, and AI-powered solutions. With a strong foundation in problem-solving and an 
-          entrepreneurial mindset, I'm driven by the potential of technology to empower education and improve lives.
+          I specialize in Frontend Development, Data Analysis and Visualization, Research and Development, Graphic Design and UI/UX, 
+          Artificial Intelligence and Machine Learning, Innovation and Entrepreneurship, and Prompt Engineering.
         </p>
       </div>
+      
+      {/* INTERESTS Heading */}
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">INTERESTS</h2>
       
       {/* Expertise Areas with Different Colors */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 md:gap-3 relative z-10">
@@ -163,15 +166,14 @@ const Header = () => {
           return (
             <div 
               key={index} 
-              className={`border-2 ${borderColorClass} rounded-md p-2 md:p-3 flex flex-col items-center transition-all duration-300 text-center group bg-gradient-to-br ${item.gradient} shadow-sm hover:shadow-md overflow-hidden`}
+              className={`border-2 ${borderColorClass} rounded-3xl p-2 md:p-3 flex flex-col items-center text-center bg-gradient-to-br ${item.gradient} shadow-sm overflow-hidden`}
             >
-              <div className={`${item.color} transition-transform duration-300 group-hover:scale-110`}>
+              <div className={`${item.color}`}>
                 {item.icon}
               </div>
-              <div className={`text-xs mt-2 font-medium ${item.color} transition-all duration-300`}>
+              <div className={`text-xs mt-2 font-medium ${item.color}`}>
                 {item.text}
               </div>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-tr from-white via-current to-white transition-opacity duration-300"></div>
             </div>
           );
         })}

@@ -5,7 +5,7 @@ const Footer = () => {
   const { darkMode } = useContext(ThemeContext);
   
   return (
-    <footer className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl p-4 shadow-md text-center">
+    <footer className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-3xl p-4 shadow-md text-center">
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <p className="text-gray-600 dark:text-gray-200">

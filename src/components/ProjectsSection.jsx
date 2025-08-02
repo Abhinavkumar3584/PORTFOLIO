@@ -6,62 +6,41 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: 'Need DU',
-      description: 'A web-based platform supporting Delhi University students to buy, sell, and exchange goods, find accommodations, and access previous year papers.',
+      title: 'Need DU: Web platform for Delhi University students',
+      description: 'Tools: HTML, CSS, JavaScript, SQL, React',
       image: 'https://img.icons8.com/ios-filled/50/000000/university.png',
-      tags: ['React', 'HTML/CSS', 'SQL'],
-      link: '#',
+      tags: ['HTML', 'CSS', 'JavaScript', 'SQL', 'React'],
+      link: 'https://github.com/Abhinavkumar3584/Need-DU',
       points: [
-        'Built a comprehensive platform enabling students to conveniently buy, sell, and exchange goods',
-        'Implemented features for finding nearby accommodations to support student housing needs',
-        'Created a repository of previous year papers to support academic preparation',
-        'Used React, HTML/CSS, and SQL to create a seamless and intuitive user experience with real-time data updates'
+        'Created a web platform enabling Delhi University students to connect',
+        'Integrated features to access College exam PYQ, buy/sell items, and find nearby accommodations to their colleges'
       ]
     },
     {
-      title: 'KnowYourSyllabus',
-      description: 'Centralized platform with interactive mind-maps for exploring government exam syllabi.',
-      image: 'https://img.icons8.com/ios-filled/50/000000/mind-map.png',
-      tags: ['React', 'Node.js', 'Mind-mapping'],
-      link: '#',
-      points: [
-        'Tackled the problem of scattered and confusing government exam content by creating a centralized platform',
-        'Designed interactive mind-maps to help users explore exam syllabi in a visually organized way',
-        'Built with React and Node.js to create a fast and responsive user experience',
-        'Helped aspirants better plan their study paths with visual clarity and structured information'
-      ]
-    },
-    {
-      title: 'Agritech Startup Analysis',
-      description: 'Data analysis of trends, challenges, and technology opportunities in Indian agricultural startups.',
+      title: 'Analysis of Agritech Startups in India',
+      description: 'Tools: Data analysis tools (e.g., Python, Excel)',
       image: 'https://img.icons8.com/ios-filled/50/000000/tractor.png',
       tags: ['Python', 'Excel', 'Data Analysis'],
       link: '#',
       points: [
-        'Conducted deep data analysis on the Indian agricultural startup ecosystem',
-        'Uncovered trends, challenges, and technology opportunities within the agritech space',
-        'Used Python and Excel for sophisticated data processing and visualization',
-        'Produced valuable insights for investors, researchers, and policy-makers in the agricultural sector'
+        'Conducted in-depth analysis of Agritech startups, identifying growth trends and challenges - urban and rural',
+        'Examined the advantages of technology integration in the agricultural sector, Pros and cons'
       ]
     },
     {
-      title: 'Cloud Resource Manager',
-      description: 'Tool for global monitoring of personal server usage and performance with real-time visualization.',
+      title: 'Cloud Resource Manager Software',
+      description: 'Tools: React.js, Node.js',
       image: 'https://img.icons8.com/ios-filled/50/000000/cloud-computing.png',
-      tags: ['Django', 'React.js', 'Node.js', 'MongoDB'],
+      tags: ['React.js', 'Node.js', 'Django', 'MongoDB'],
       link: '#',
       points: [
-        'Developed a tool for global monitoring of personal server usage and performance metrics',
-        'Created Django backend to collect live system metrics from distributed computing resources',
-        'Built React.js frontend to visualize resource data in real-time dashboards',
-        'Implemented user authentication with Node.js and secure data storage with MongoDB',
-        'Delivered a complete resource management solution with both visual and analytical capabilities'
+        'Engineered a monitoring system for personal servers, with a Django backend for system resource data collection',
+        'Designed Figma screens and frontend created with React.js for real-time data visualization and user interaction and Integrated Node.js for user authentication and MongoDB for storage'
       ]
     }
   ];
-
   return (
-    <section id="projects" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
+    <section id="projects" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-3xl p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background - Similar to Header */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -73,8 +52,7 @@ const ProjectsSection = () => {
       
       <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-        {projects.map((project, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500">
+        {projects.map((project, index) => (          <div key={index} className="bg-white dark:bg-gray-800 rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500">
             <div className="p-5">
               <div className="flex items-center mb-3">
                 <img src={project.image} alt={project.title} className="w-10 h-10 mr-3" />

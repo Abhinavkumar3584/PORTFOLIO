@@ -63,7 +63,7 @@ function App() {
                 <section className="section-wrapper" id="activities">
                   <ActivitiesSection />
                 </section>
-                <section className="section-wrapper" id="hobbies">
+                <section className="section-wrapper" id="achievements">
                   <HobbiesSection />
                 </section>
                 <section className="section-wrapper" id="gallery">

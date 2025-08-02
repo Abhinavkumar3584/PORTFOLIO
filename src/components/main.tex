@@ -1,0 +1,366 @@
+\documentclass[a4paper,11pt]{article}
+
+% Package imports
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\usepackage{fontawesome5}
+
+% Color definitions
+\definecolor{darkblue}{RGB}{0,0,139}
+
+% Page layout
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=1.0cm, top=0.8cm, right=0.9cm, bottom=0.6cm}
+\setlength{\footskip}{5pt} % Addressing fancyhdr warning
+\renewcommand{\baselinestretch}{0.95} % Reduce line spacing globally
+
+% Hyperlink setup (moved after fancyhdr to address warning)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    filecolor=darkblue,
+    urlcolor=darkblue,
+}
+
+% Custom box settings
+\usepackage[most]{tcolorbox}
+\tcbset{
+    frame code={},
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=gray!20,
+    colframe=white,
+    width=\dimexpr\textwidth\relax,
+    enlarge left by=-2mm,
+    boxsep=4pt,
+    arc=0pt,outer arc=0pt,
+}
+
+% URL style
+\urlstyle{same}
+
+% Text alignment
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.1mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.5mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.1mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.5mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-5pt}}
+
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\circ$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=0.5mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*,labelsep=1mm,itemsep=0.1mm]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+
+% Commands for icon sizing and positioning
+\newcommand{\socialicon}[1]{\raisebox{-0.05em}{\resizebox{!}{1em}{#1}}}
+\newcommand{\ieeeicon}[1]{\raisebox{-0.3em}{\resizebox{!}{1.3em}{#1}}}
+
+% Font options
+\newcommand{\headerfonti}{\fontfamily{phv}\selectfont} % Helvetica-like (similar to Arial/Calibri)
+\newcommand{\headerfontii}{\fontfamily{ptm}\selectfont} % Times-like (similar to Times New Roman)
+\newcommand{\headerfontiii}{\fontfamily{ppl}\selectfont} % Palatino (elegant serif)
+\newcommand{\headerfontiv}{\fontfamily{pbk}\selectfont} % Bookman (readable serif)
+\newcommand{\headerfontv}{\fontfamily{pag}\selectfont} % Avant Garde-like (similar to Trebuchet MS)
+\newcommand{\headerfontvi}{\fontfamily{cmss}\selectfont} % Computer Modern Sans Serif
+\newcommand{\headerfontvii}{\fontfamily{qhv}\selectfont} % Quasi-Helvetica (another Arial/Calibri alternative)
+\newcommand{\headerfontviii}{\fontfamily{qpl}\selectfont} % Quasi-Palatino (another elegant serif option)
+\newcommand{\headerfontix}{\fontfamily{qtm}\selectfont} % Quasi-Times (another Times New Roman alternative)
+\newcommand{\headerfontx}{\fontfamily{bch}\selectfont} % Charter (clean serif font)
+
+\begin{document}
+\headerfontiii
+
+% Header
+\begin{center}
+    {\Huge\textbf{ABHINAV KUMAR}} \\
+    \vspace{2mm}
+    \small{
+    \socialicon{\faPhone} {+91-7500024959}
+ | \socialicon{\faEnvelope} \href{mailto:abhikumar3584@gmail.com}{abhikumar3584@gmail.com}
+    } \\
+    \vspace{1.5mm}
+    \small{
+    % \socialicon{\faUniversity} \href{mailto:152103@cic.du.ac.in}{152103@cic.du.ac.in} |
+    \socialicon{\faLinkedin} \href{https://www.linkedin.com/in/abhinav-kumar-0ba731239/}{Linked-in} | 
+    \socialicon{\faGithub} \href{https://github.com/Abhinavkumar3584}{Github} | 
+    \socialicon{\faTwitter} \href{https://x.com/ABHINAV11555548}{Twitter}
+    | \socialicon{\faUser} \href{https://portfolioabhinavkumar.vercel.app/}{Portfolio}
+    }
+\end{center}
+
+\vspace{2mm}
+
+\section{\textbf{Interest}}
+\small{
+Frontend Development, Data Analysis and Visualization, Research and Development, Graphic Design and UI/UX, Artificial Intelligence and Machine Learning, Innovation and Entrepreneurship, and Prompt Engineering.
+}
+
+\section{\textbf{Experience}}
+  \resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Pratiyogita Setu [\href{https://psetu.com/}{\faIcon{globe}}]}{India}
+    {Founder}{Feb 2025 - Present}
+    \resumeItemListStart
+      \item Launched an AI-powered exam prep platform for competitive exam aspirants.
+      \item Developed \textbf{Pariksha Yogya}, an eligibility and attempt tracker to help students understand their exam qualifications.
+      \item Designed \textbf{Pariksha Marg}, a structured syllabus roadmap for systematic and effective learning.
+      \item Built \textbf{Pariksha Gyan}, an AI chatbot that provides real-time explanations, topic-wise PYQs, and Q\&A insights.
+
+     
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {CHEGG [\href{https://www.chegg.com/}{\faIcon{globe}}]}{Remote}
+    {Subject Matter Expert}{Sept 2023 - Present}
+    \resumeItemListStart
+      \item Solved complex problems related to Data Structures and Algorithms, Computer Networking, and Programming.
+      \item Successfully addressed \textbf{100+} questions, provided detailed explanations and solutions, maintaining \textbf{95} accuracy.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Gloomweb Solutions [\href{https://gloomweb.com}{\faIcon{globe}}]}{Remote (Client: Canada)}
+    {Frontend Developer Intern}{Apr 2025 – Jun 2025}
+    \resumeItemListStart
+     \item Translated Figma designs into responsive and accessible web UI using HTML, CSS, Tailwind CSS, and JavaScript.
+     \item Collaborated team in an Agile product development environment to deliver scalable and production-ready front-ends, maintain clean, well-documented code, and ensure seamless back-end integration.
+
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Big and Best Mart}{India}
+    {Frontend Developer}{Dec 2024 - Feb 2025}
+    \resumeItemListStart
+      \item Developed an e-commerce platform for selling stationery and daily essentials.
+      \item Designed and implemented a user-friendly interface for seamless online shopping.
+      \item Focused on optimizing website performance and ensuring a smooth customer experience.
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {CLUSTER INNOVATION CENTRE, UNIVERSITY OF DELHI [\href{https://cic.du.ac.in/}{\faIcon{globe}}]}{Delhi, India}
+    {AI and ML, Chatbot Development}{July 2024 - Nov 2024}
+    \resumeItemListStart
+      \item Developed an AI chatbot using NLP models (Google-BERT, Sentence Transformers) and Pinecone for vector database to deliver precise answers from NCERT content for competitive exam (UPSC, SSC, etc).
+      \item Built Django Web App enabling users to query questions and receive accurate responses efficiently.
+      \item Optimized data pre-processing and query matching algorithms to enhance retrieval speed and accuracy.
+    \resumeItemListEnd
+
+  \resumeSubheading  
+    {Sewa International [\href{https://sewausa.org}{\faIcon{globe}}]}{Hybrid, India}  
+    {Website \& Digital Outreach Volunteer}{May 2024 – Jul 2024}  
+    \resumeItemListStart  
+      \item Managed and maintained website on Wild Apricot, Update pages aligned with upcoming events and Programs.    
+      \item Improved website SEO health score from \textbf{45 to 75}.  
+      \item Engaged in Grassroots Leadership Camp, co-organized SEWA FELLOWSHIP, and guided \textbf{120+} candidates.
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {{BEYONDEXAMS [\href{https://beyondexams.org/}{\faIcon{globe}}]}}{Delhi, India}
+      {AI Youtube video Classifier}{July 2022 - Nov 2022}
+      \resumeItemListStart
+        \item Built an AI model using Python and Scikit-learn to classify YouTube videos as educational or non-educational.
+        \item Developed a user-friendly website and initiated a Chrome extension for seamless video classification.
+      \resumeItemListEnd 
+      
+  \resumeSubHeadingListEnd
+
+\section{\textbf{Education}}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Cluster Innovation centre, University of delhi}{Delhi, India}
+{B.tech (Information Technology and Mathematical Innovation)}{Nov 2021 - June 2025}
+\resumeItemListStart
+\item CGPA: 8.24/10
+\resumeItemListEnd
+
+\resumeSubheading
+{Maa Bhargwati International School}{Bulandshahr, India}
+{Intermediate}{March 2021}
+
+\resumeSubheading
+{Rashtriya Military School , Ajmer }{Ajmer, India}
+{Secondary Education}{March 2019}
+
+\resumeSubHeadingListEnd
+
+\section{\textbf{Projects}}
+\resumeSubHeadingListStart
+
+\resumeProject
+  {Need DU: Web platform for Delhi University students}
+  {Tools: HTML, CSS, JavaScript, SQL, React}
+  {}
+  {{}[\href{https://github.com/Abhinavkumar3584/Need-DU}{\textcolor{darkblue}{\faGithub}}]}
+\resumeItemListStart
+  \item Created a web platform enabling Delhi University students to connect.
+  \item Integrated features to access College exam PYQ, buy/sell items, and find nearby accommodations to their colleges.
+ 
+\resumeItemListEnd
+
+\resumeProject
+  {Analysis of Agritech Startups in India}
+  {Tools: Data analysis tools (e.g., Python, Excel)}
+  {}
+  {{}}
+\resumeItemListStart
+  \item Conducted in-depth analysis of Agritech startups, identifying growth trends and challenges - urban and rural.
+  \item Examined the advantages of technology integration in the agricultural sector, Prons and cons.
+  
+\resumeItemListEnd
+
+\resumeProject
+  {Cloud Resource Manager Software}
+  {Tools: React.js, Node.js}
+  {}
+  {{}}
+\resumeItemListStart
+  \item  Engineered a monitoring system for personal servers, with a Django backend for system resource data
+collection.
+  \item Designed Figma screens and frontend created with React.js for real-time data visualization and user interaction and Integrated Node.js for user authentication and MongoDB for storage.
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{\textbf{Skills}}
+\resumeItemListStart
+ 
+  \resumeItem{Programming Languages:}
+    {Python, C/C++, Java, HTML, CSS, Javascript}
+  \resumeItem{Developer Tools} % Category
+    {Visual Studio Code, Git, GitHub}
+  \resumeItem{Frameworks \& Libraries}
+    {React.js, Django, OpenCV, Scikit-learn} 
+  \resumeItem{Cloud \& Databases}
+    {SQL, Pinecone}
+  \resumeItem{Operating Systems}
+    {Windows, Linux}
+  \resumeItem{Graphics \& UI/UX designing tools:}
+    {Canva, Figma}
+  \resumeItem{AI \& Automation Tools:}
+    {Github Copilot, Lovable.dev, Bolt.dev, ChatGPT, Gemini}
+  \resumeItem{CMS \& Web Tools:}
+    {WordPress, Zoho, Wild Apricot, SEO}
+  
+  
+\resumeItemListEnd
+
+\section{\textbf{Achievements and Position of Responsibility}}
+\resumeItemListStart
+ 
+  \resumeItem{}
+    {Cleared All India Rashtriya Military School Entrance Exam and Sainik School Entrance Exam.}
+  \resumeItem{}
+    {Selected for B.Tech (Information Technology and Mathematical Innovation) at Cluster Innovation Centre, University of Delhi, among 50 seats.} 
+  \resumeItem{}
+    {Secured fourth position in hackathon organized by Beyond Exams.}
+  \resumeItem{}
+    {Core team member of college hackathon (Convoke 5.0) organizing team, managing logistics and event planning.}
+ 
+\resumeItemListEnd
+ 
+\section{\textbf{Certifications}}
+\resumeItemListStart
+    \item \textbf{Sewa International:} Grassroot Leadership Camp Volunteer (Jaipur) \hfill \textit{21 June - 22 June, 2025}[\href{https://indiancc.nic.in/}{\faIcon{globe}}]
+    \item \textbf{National Cadet Corps:} Combined Annual Training Camp - (2023, 2024) \hfill \textit{15 - 24 July, 2024}[\href{https://indiancc.nic.in/}{\faIcon{globe}}]
+    \item \textbf{National Cadet Corps:} All India UP Trekking Camp \hfill \textit{10 Nov - 17 Nov, 2024}[\href{https://indiancc.nic.in/}{\faIcon{globe}}]
+    \item \textbf{Beyond Exams:} Hack2Educate Hackathon Participant \hfill \textit{11 Nov - 13 Nov, 2022}[\href{https://indiancc.nic.in/}{\faIcon{globe}}]
+    \item \textbf{IIRS E-Learning:} Geographic Information System Overview \hfill \textit{3 Oct - 27 Oct, 2022}[\href{https://indiancc.nic.in/}{\faIcon{globe}}]
+    
+
+\resumeItemListEnd
+
+% Extra-Curricular Activities Section
+\section{\textbf{Extra-Curricular Activities}}
+\resumeSubHeadingListStart
+  \resumeSubheading
+      {{National Cadet Corps }}{Delhi, India}
+      {Rank:CADET}{Nov 2022 - April 2025}
+     \resumeItemListStart
+        \item Completed Combined Annual Training Camp,2022 and 2023 , leading and managing a team of \textbf{50+} cadets.
+        \item Completed All India UP Trekking Camp with rank Company 2IC, commanding a team of 101 cadets.
+        \item Successfully passed National Cadet Corps \textbf{Certificate - B} with \textbf{"B"} grade and \textbf{Certificate - C} with \textbf{"A"} grade.
+        
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\end{document}

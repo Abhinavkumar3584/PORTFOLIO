@@ -17,28 +17,6 @@ const Sidebar = () => {
       color: 'text-blue-500'
     },
     {
-      name: 'Twitter',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full" fill="currentColor">
-          <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-        </svg>
-      ),
-      url: 'https://x.com/ABHINAV11555548',
-      color: 'text-cyan-400'
-    },
-    /* Commented out social links for later use
-    {
-      name: 'Instagram',
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" className="w-full h-full" fill="currentColor">
-          <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6-7.8 34.7-22.9 42.6-42.6 11.7-29.5 9-99.5 9-132.1s2.7 102.7-9 132.1z" />
-        </svg>
-      ),
-      url: 'https://www.instagram.com/abhinavkumar/',
-      color: 'text-pink-500'
-    },
-    */
-    {
       name: 'GitHub',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" className="w-full h-full" fill="currentColor">
@@ -48,18 +26,47 @@ const Sidebar = () => {
       url: 'https://github.com/Abhinavkumar3584',
       color: 'text-purple-400'
     },
-    /* Commented out GitLab for later use
     {
-      name: 'GitLab',
+      name: 'Twitter',
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full" fill="currentColor">
-          <path d="M503.5 204.6L502.8 202.8L433.1 21.02C431.7 17.45 429.2 14.43 425.9 12.38C423.5 10.83 420.8 9.865 417.9 9.57C415 9.275 412.2 9.653 409.5 10.68C406.8 11.7 404.4 13.34 402.4 15.46C400.5 17.58 399.1 20.13 398.3 22.9L351.3 166.9H160.8L113.7 22.9C112.9 20.13 111.5 17.59 109.6 15.47C107.6 13.35 105.2 11.72 102.5 10.7C99.86 9.675 96.98 9.295 94.12 9.587C91.26 9.878 88.51 10.83 86.08 12.38C82.84 14.43 80.33 17.45 78.92 21.02L9.267 202.8L8.543 204.6C-1.484 230.8-2.72 259.6 5.023 286.6C12.77 313.5 29.07 337.3 51.47 354.2L51.74 354.4L52.33 354.8L158.3 434.3L210.9 474L242.9 498.2C246.6 500.1 251.2 502.5 255.9 502.5C260.6 502.5 265.2 500.1 268.9 498.2L300.9 474L353.5 434.3L460.2 354.4L460.5 354.1C482.9 337.2 499.2 313.5 506.1 286.6C514.7 259.6 513.5 230.8 503.5 204.6z" />
+          <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
         </svg>
       ),
-      url: 'https://gitlab.com/abhinavkumar/',
-      color: 'text-orange-500'
+      url: 'https://x.com/ABHINAV11555548',
+      color: 'text-cyan-400'
+    },
+    {
+      name: 'Portfolio',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full" fill="currentColor">
+          <path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.4 8.4C165.9 42.6 146.1 96.1 136.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM18.6 352c29.9 74.1 93.6 130.9 171.8 151.6c-25.5-34.2-45.2-87.7-55.3-151.6H18.6zm149.1 0c-6.1 36.4-15.5 68.6-27 94.7c-10.5 23.6-22.2 40.7-33.5 51.5C96 509.2 86.7 512 79.4 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5c-11.6-26-20.9-58.2-27-94.7h216.6zm209 0c10 63.9 29.8 117.4 55.3 151.6C353.8 482.9 290.2 426.1 260.3 352H376.9z"/>
+        </svg>
+      ),
+      url: 'https://portfolioabhinavkumar.vercel.app/',
+      color: 'text-green-500'
     }
-    */
+  ];
+
+  const contactInfo = [
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+      ),
+      text: '+91-7500024959',
+      link: 'tel:+91-7500024959'
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      ),
+      text: 'abhikumar3584@gmail.com',
+      link: 'mailto:abhikumar3584@gmail.com'
+    }
   ];
 
   const handleDownload = () => {
@@ -72,7 +79,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl backdrop-blur-md p-3 md:sticky md:top-4 h-auto w-full">
+    <div className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-3xl backdrop-blur-md p-7 md:sticky md:top-4 h-auto w-full">
       {/* Mobile layout (horizontal with right side stacked) */}
       <div className="flex md:hidden items-center">
         {/* Left side: Profile Image */}
@@ -90,7 +97,7 @@ const Sidebar = () => {
         <div className="flex-grow flex flex-col justify-evenly h-40 py-2">
           {/* Open to Work Badge with Animation */}
           <div className="flex justify-center">
-            <div className="relative px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r from-purple-500 via-green-500 to-blue-600 bg-size-200 animate-gradient-x">
+            <div className="relative px-3 py-1 rounded-3xl text-white text-sm font-medium bg-gradient-to-r from-purple-500 via-green-500 to-blue-600 bg-size-200 animate-gradient-x">
               <div className="absolute inset-0 rounded-full bg-white opacity-20"></div>
               <div className="flex items-center">
                 <div className="w-2 h-2 rounded-full bg-white mr-2 animate-ping"></div>
@@ -107,7 +114,7 @@ const Sidebar = () => {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`w-9 h-9 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 ${social.color} hover:text-green-500 hover:border-green-500 transition-all duration-300`}
+                className={`w-9 h-9 flex items-center justify-center rounded-3xl border border-gray-300 dark:border-gray-600 ${social.color} hover:text-green-500 hover:border-green-500 transition-all duration-300`}
                 aria-label={social.name}
               >
                 <div className="w-5 h-5">{social.icon}</div>
@@ -118,7 +125,7 @@ const Sidebar = () => {
           {/* Resume Download Button */}
           <button 
             onClick={handleDownload}
-            className="py-2 bg-green-500 hover:bg-green-600 rounded-lg text-white font-medium transition-colors duration-300 flex items-center justify-center gap-1 text-sm"
+            className="py-2 bg-green-500 hover:bg-green-600 rounded-3xl text-white font-medium transition-colors duration-300 flex items-center justify-center gap-1 text-sm"
           >
             <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -131,7 +138,7 @@ const Sidebar = () => {
       {/* Desktop layout (vertical) */}
       <div className="hidden md:block">
         {/* Profile Image */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6">          
           <div className="w-60 h-60 rounded-full overflow-hidden border-2 border-green-500 dark:border-green-400 p-1">
             <img 
               src={profileImage} 
@@ -148,9 +155,8 @@ const Sidebar = () => {
         </div>
         
         {/* Open to Work Badge with Animation */}
-        <div className="flex justify-center mb-4">
-          <div className="relative px-4 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r from-purple-500 via-green-500 to-blue-600 bg-size-200 animate-gradient-x">
-            <div className="absolute inset-0 rounded-full bg-white opacity-20"></div>
+        <div className="flex justify-center mb-4">          <div className="relative px-4 py-1 rounded-3xl text-white text-sm font-medium bg-gradient-to-r from-purple-500 via-green-500 to-blue-600 bg-size-200 animate-gradient-x">
+            <div className="absolute inset-0 rounded-3xl bg-white opacity-20"></div>
             <div className="flex items-center justify-center">
               <div className="w-2 h-2 rounded-full bg-white mr-2 animate-ping"></div>
               <span>Open to Work</span>
@@ -166,10 +172,25 @@ const Sidebar = () => {
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 ${social.color} hover:text-green-500 hover:border-green-500 transition-all duration-300`}
+              className={`w-8 h-8 flex items-center justify-center rounded-3xl border border-gray-300 dark:border-gray-600 ${social.color} hover:text-green-500 hover:border-green-500 transition-all duration-300`}
               aria-label={social.name}
             >
               <div className="w-4 h-4">{social.icon}</div>
+            </a>
+          ))}
+        </div>
+
+        {/* Contact Information */}
+        <div className="mb-6 space-y-3">
+          <h3 className="text-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Contact</h3>
+          {contactInfo.map((contact, index) => (
+            <a
+              key={index}
+              href={contact.link}
+              className="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-green-500 transition-colors duration-300"
+            >
+              <span className="text-green-500">{contact.icon}</span>
+              <span>{contact.text}</span>
             </a>
           ))}
         </div>

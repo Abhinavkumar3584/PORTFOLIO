@@ -7,35 +7,20 @@ const ActivitiesSection = () => {
 
   const activities = [
     {
-      name: 'National Cadet Corps (NCC)',
-      role: 'Cadet',
-      period: 'Nov 2021 - Present',
+      name: 'National Cadet Corps',
+      role: 'Rank: CADET',
+      period: 'Nov 2022 - April 2025',
       location: 'Delhi, India',
       logo: nccLogo,
       details: [
-        'Led teams in CATC (Combined Annual Training Camp) 2022 with rank of Sergeant',
-        'Participated in CATC (Combined Annual Training Camp) 2023 with rank of Cadet',
-        'Served as 2IC (Second-in-Command) at All India UP Trekking Camp, leading a team of 101 cadets',
-        'Developed discipline, leadership skills, and teamwork through rigorous military training'
-      ]
-    },
-    {
-      name: 'Academic Achievements',
-      role: 'Student',
-      period: '2019 - Present',
-      location: 'India',
-      logo: 'https://img.icons8.com/color/48/000000/medal--v1.png',
-      details: [
-        'Qualified for Rashtriya Military School and Sainik School in Class 9 competitive exams',
-        'Selected among top 50 candidates for B.Tech program at Cluster Innovation Centre, University of Delhi',
-        'Achieved 4th place in Hack2Educate hackathon organized by Beyond Exams',
-        'Core Team Member for Convoke 5.0 Hackathon, handling logistics and planning operations'
+        'Completed Combined Annual Training Camp, 2022 and 2023, leading and managing a team of 50+ cadets',
+        'Completed All India UP Trekking Camp with rank Company 2IC, commanding a team of 101 cadets',
+        'Successfully passed National Cadet Corps Certificate - B with "B" grade and Certificate - C with "A" grade'
       ]
     }
   ];
-
   return (
-    <section id="activities" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-lg p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
+    <section id="activities" className="mb-12 relative bg-white dark:bg-gray-900 border border-gray-400 dark:border-gray-700 rounded-3xl p-4 md:p-8 overflow-hidden max-w-full mx-auto shadow-md">
       {/* Diagonal Line Background - Similar to Header */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -inset-full h-[200%] w-[200%] rotate-45 translate-x-1/2 -translate-y-1/4">
@@ -45,10 +30,10 @@ const ActivitiesSection = () => {
         </div>
       </div>
       
-      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Achievements & Activities</h2>
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 inline-block border-b-2 border-green-500 dark:border-green-400 pb-1 relative z-10">Extra-Curricular Activities</h2>
       <div className="space-y-6 relative z-10">
         {activities.map((activity, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+          <div key={index} className="bg-white dark:bg-gray-800 border-2 border-gray-400 dark:border-gray-700 hover:border-green-500 rounded-3xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
             <div className="p-5">
               <div className="flex items-center mb-3">
                 <img src={activity.logo} alt={activity.name} className="w-12 h-12 object-contain mr-4" />
