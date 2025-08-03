@@ -59,20 +59,47 @@ const Sidebar = () => {
     }
   ];
 
-  const handleDownload = () => {
-    // Use the PDF from public folder - this will work!
-    const pdfUrl = '/Abhinav_Kumar_Resume.pdf';
-    
-    // Create download link
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'Abhinav_Kumar_Resume.pdf';
-    link.target = '_blank'; // Also open in new tab as fallback
-    
-    // Add to DOM, click, and remove
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = async () => {
+    try {
+      // Multiple fallback approaches for Vercel deployment
+      const pdfPaths = [
+        `${process.env.PUBLIC_URL}/Abhinav_Kumar_Resume.pdf`,
+        '/Abhinav_Kumar_Resume.pdf',
+        './Abhinav_Kumar_Resume.pdf'
+      ];
+      
+      let pdfUrl = pdfPaths[0];
+      
+      // Try to fetch the PDF to ensure it exists
+      for (const path of pdfPaths) {
+        try {
+          const response = await fetch(path, { method: 'HEAD' });
+          if (response.ok) {
+            pdfUrl = path;
+            break;
+          }
+        } catch (e) {
+          continue;
+        }
+      }
+      
+      // Create download link
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'Abhinav_Kumar_Resume.pdf';
+      link.setAttribute('download', 'Abhinav_Kumar_Resume.pdf');
+      link.style.display = 'none';
+      
+      // Add to DOM, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Ultimate fallback: open in new tab
+      window.open('/Abhinav_Kumar_Resume.pdf', '_blank');
+    }
   };
 
   return (
