@@ -7,7 +7,7 @@ const AchievementsSection = () => {
   const achievements = [
     {
       title: 'Military School Achievement',
-      icon: 'https://img.icons8.com/color/48/000000/military-medal.png',
+      icon: '/rashtriya military school ajmer.png',
       description: 'Cleared All India Rashtriya Military School Entrance Exam and Sainik School Entrance Exam.'
     },
     {

@@ -3,14 +3,20 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  // Check if user has previously set a preference or default to light mode
+  // Function to detect mobile devices
+  const isMobileDevice = () => {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+           window.innerWidth <= 768;
+  };
+
+  // Check if user has previously set a preference or default based on device type
   const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       return savedTheme === 'dark';
     }
-    // Default to light mode instead of system preference
-    return false;
+    // Default to dark mode for mobile devices, light mode for desktop
+    return isMobileDevice();
   });
 
   // Update localStorage and document class when theme changes

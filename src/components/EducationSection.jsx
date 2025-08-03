@@ -10,7 +10,7 @@ const EducationSection = () => {
       institution: 'Cluster Innovation centre, University of delhi',
       period: 'Nov 2021 - June 2025',
       location: 'Delhi, India',
-      logo: 'https://img.icons8.com/color/48/000000/graduation-cap.png',
+      logo: '/cluster innovation centre, university of delhi.png',
       details: [
         'CGPA: 8.24/10'
       ]
@@ -20,7 +20,7 @@ const EducationSection = () => {
       institution: 'Maa Bhargwati International School',
       period: 'March 2021',
       location: 'Bulandshahr, India',
-      logo: 'https://img.icons8.com/color/48/000000/school.png',
+      logo: '/maa bhagwati international school.png',
       details: [
         'Completed intermediate education'
       ]
@@ -30,7 +30,7 @@ const EducationSection = () => {
       institution: 'Rashtriya Military School, Ajmer',
       period: 'March 2019',
       location: 'Ajmer, India',
-      logo: 'https://img.icons8.com/color/48/000000/military-medal.png',
+      logo: '/rashtriya military school ajmer.png',
       details: [
         'Completed secondary education'
       ]

@@ -11,6 +11,7 @@ import HobbiesSection from './components/HobbiesSection';
 import ActivitiesSection from './components/ActivitiesSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
+import BottomActions from './components/BottomActions';
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
@@ -27,10 +28,8 @@ function App() {
             {/* Main Content Area */}
             <div className="w-full md:w-3/4 flex flex-col gap-2 py-2 px-1 md:px-2 mobile-pb-safe">
               {/* Navigation */}
-              <div className="sticky top-0 z-40 pt-1">
-                <div className="sticky-nav">
-                  <Navbar />
-                </div>
+              <div className="sticky top-2 z-40 dark:bg-gray-900">
+                <Navbar />
               </div>
               
               {/* Mobile Sidebar - visible only on mobile */}
@@ -70,6 +69,7 @@ function App() {
                   <GallerySection />
                 </section>
               </div>
+              <BottomActions />
               <Footer />
             </div>
           </div>

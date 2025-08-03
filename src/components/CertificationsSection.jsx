@@ -1,5 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import nccLogo from '../assets/images/ncc.png';
+import beyondExamsLogo from '../assets/images/beyondexams.png';
 
 const CertificationsSection = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -20,7 +22,7 @@ const CertificationsSection = () => {
       name: 'Grassroot Leadership Camp Volunteer (Jaipur)',
       issuer: 'Sewa International',
       date: '21 June - 22 June, 2025',
-      logo: 'https://img.icons8.com/color/48/000000/leadership.png',
+      logo: '/grassroot leadership camp.png',
       details: [
         'Participated in Grassroot Leadership Camp',
         'Volunteer activities in Jaipur',
@@ -32,7 +34,7 @@ const CertificationsSection = () => {
       name: 'Combined Annual Training Camp - (2023, 2024)',  
       issuer: 'National Cadet Corps',
       date: '15 - 24 July, 2024',
-      logo: 'https://img.icons8.com/color/48/000000/military.png',
+      logo: nccLogo,
       details: [
         'Completed Combined Annual Training Camp',
         'Military training and discipline',
@@ -44,7 +46,7 @@ const CertificationsSection = () => {
       name: 'All India UP Trekking Camp',
       issuer: 'National Cadet Corps', 
       date: '10 Nov - 17 Nov, 2024',
-      logo: 'https://img.icons8.com/color/48/000000/trekking.png',
+      logo: nccLogo,
       details: [
         'Completed All India UP Trekking Camp',
         'Adventure training and endurance',
@@ -56,7 +58,7 @@ const CertificationsSection = () => {
       name: 'Hack2Educate Hackathon Participant',
       issuer: 'Beyond Exams',
       date: '11 Nov - 13 Nov, 2022',
-      logo: 'https://img.icons8.com/color/48/000000/prize.png',
+      logo: beyondExamsLogo,
       details: [
         'Participated in Hack2Educate Hackathon',
         'Developed innovative educational solutions',

@@ -134,11 +134,11 @@ const Navbar = () => {
   };
 
   return (    <>      {/* Desktop Navigation */}      
-    <nav className={`fixed md:static bottom-0 left-2 right-2 z-10 py-3 md:py-3 px-4 md:px-2 mb-2 md:mb-0 
-        ${darkMode ? ' text-gray-800 border-gray-300' : 'bg-gray-800 text-white border-gray-700'} 
-        border md:border rounded-3xl md:rounded-3xl shadow-md transition-colors duration-300
+    <nav className={`sticky top-0 md:static bottom-0 left-2 right-2 z-10 py-3 md:py-3 px-4 md:px-2 mb-2 md:mb-0 
+        ${darkMode ? 'bg-white text-gray-800 border-gray-300' : 'bg-gray-800 text-white border-gray-700'} 
+        border md:border rounded-3xl md:rounded-3xl shadow-md transition-all duration-300
         ${isMobile ? 'hidden' : 'flex'}`}
-        style={noSelectStyle}>
+        style={{...noSelectStyle, transform: 'translateZ(0)'}}>
         <ul className="flex justify-between flex-nowrap overflow-x-auto gap-1 md:gap-2 w-full">
           {navItems.map((item, index) => {
             const isActive = activeSection === item.id;

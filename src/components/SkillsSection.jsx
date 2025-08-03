@@ -43,8 +43,8 @@ const SkillsSection = () => {
     
     // CMS & Web Tools
     { name: 'WordPress', icon: 'https://img.icons8.com/color/48/000000/wordpress.png', color: 'text-blue-600 dark:text-blue-400', borderColor: 'border-blue-600 dark:border-blue-400', category: 'cms' },
-    { name: 'Zoho', icon: 'https://img.icons8.com/color/48/000000/zoho.png', color: 'text-red-600 dark:text-red-400', borderColor: 'border-red-600 dark:border-red-400', category: 'cms' },
-    { name: 'Wild Apricot', icon: 'https://img.icons8.com/color/48/000000/website.png', color: 'text-orange-600 dark:text-orange-400', borderColor: 'border-orange-600 dark:border-orange-400', category: 'cms' },
+    { name: 'Zoho', icon: '/zoho.jfif', color: 'text-red-600 dark:text-red-400', borderColor: 'border-red-600 dark:border-red-400', category: 'cms' },
+    { name: 'Wild Apricot', icon: '/wild apricot.png', color: 'text-orange-600 dark:text-orange-400', borderColor: 'border-orange-600 dark:border-orange-400', category: 'cms' },
     { name: 'SEO', icon: 'https://img.icons8.com/color/48/000000/search.png', color: 'text-green-600 dark:text-green-400', borderColor: 'border-green-600 dark:border-green-400', category: 'cms' }
   ];
 
@@ -237,7 +237,7 @@ const SkillsSection = () => {
               <img 
                 src={skill.icon} 
                 alt={skill.name} 
-                className="w-8 h-8 transition-transform duration-300 group-hover:scale-110" 
+                className="w-8 h-8 object-contain transition-transform duration-300 group-hover:scale-110" 
               />
               <span className={`font-semibold ${skill.color} group-hover:text-green-600 dark:group-hover:text-green-400 transition-all duration-300 text-sm`}>
                 {skill.name}

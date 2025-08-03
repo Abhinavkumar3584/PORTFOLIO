@@ -7,15 +7,36 @@ const ActivitiesSection = () => {
 
   const activities = [
     {
+      name: 'Grassroot Leadership Camp',
+      role: 'Participant',
+      period: 'May 2024 - Jul 2024',
+      location: 'India',
+      logo: '/grassroot leadership camp.png',
+      details: [
+        'Participated in grassroots leadership development program',
+        'Developed leadership and community engagement skills',
+        'Engaged in various community outreach activities'
+      ]
+    },
+    {
       name: 'National Cadet Corps',
       role: 'Rank: CADET',
       period: 'Nov 2022 - April 2025',
       location: 'Delhi, India',
       logo: nccLogo,
       details: [
-        'Completed Combined Annual Training Camp, 2022 and 2023, leading and managing a team of 50+ cadets',
-        'Completed All India UP Trekking Camp with rank Company 2IC, commanding a team of 101 cadets',
-        'Successfully passed National Cadet Corps Certificate - B with "B" grade and Certificate - C with "A" grade'
+        {
+          text: 'Completed Combined Annual Training Camp, 2022 and 2023, leading and managing a team of 50+ cadets',
+          showLogo: true
+        },
+        {
+          text: 'Completed All India UP Trekking Camp with rank Company 2IC, commanding a team of 101 cadets',
+          showLogo: true
+        },
+        {
+          text: 'Successfully passed National Cadet Corps Certificate - B with "B" grade and Certificate - C with "A" grade',
+          showLogo: false
+        }
       ]
     }
   ];
@@ -48,8 +69,11 @@ const ActivitiesSection = () => {
               <div className="space-y-3">
                 <ul className="list-disc pl-5 space-y-2">
                   {activity.details.map((detail, idx) => (
-                    <li key={idx} className="text-gray-700 dark:text-gray-200 text-sm text-justified font-medium">
-                      {detail}
+                    <li key={idx} className="text-gray-700 dark:text-gray-200 text-sm text-justified font-medium flex items-start gap-2">
+                      {typeof detail === 'object' && detail.showLogo && (
+                        <img src={nccLogo} alt="NCC" className="w-4 h-4 object-contain mt-0.5 flex-shrink-0" />
+                      )}
+                      <span>{typeof detail === 'object' ? detail.text : detail}</span>
                     </li>
                   ))}
                 </ul>

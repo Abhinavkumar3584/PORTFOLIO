@@ -14,7 +14,7 @@ const ExperienceSection = () => {
       position: 'Founder',
       date: 'Feb 2025 - Present',
       location: 'India',
-      logo: 'https://img.icons8.com/color/48/000000/launched-rocket--v1.png',
+      logo: '/pratiyogita setu.svg',
       website: 'https://psetu.com/',
       description: 'Launched an AI-powered exam prep platform for competitive exam aspirants. Developed Pariksha Yogya, an eligibility and attempt tracker to help students understand their exam qualifications. Designed Pariksha Marg, a structured syllabus roadmap for systematic and effective learning. Built Pariksha Gyan, an AI chatbot that provides real-time explanations, topic-wise PYQs, and Q&A insights.',
       achievements: [
@@ -43,7 +43,7 @@ const ExperienceSection = () => {
       position: 'Frontend Developer Intern',
       date: 'Apr 2025 – Jun 2025',
       location: 'Remote (Client: Canada)',
-      logo: 'https://img.icons8.com/color/48/000000/code.png',
+      logo: '/gloomweb solution.png',
       website: 'https://gloomweb.com',
       description: 'Translated Figma designs into responsive and accessible web UI using HTML, CSS, Tailwind CSS, and JavaScript. Collaborated team in an Agile product development environment to deliver scalable and production-ready front-ends, maintain clean, well-documented code, and ensure seamless back-end integration.',
       achievements: [
@@ -71,7 +71,7 @@ const ExperienceSection = () => {
       position: 'AI and ML, Chatbot Development',
       date: 'July 2024 - Nov 2024',
       location: 'Delhi, India',
-      logo: 'https://img.icons8.com/color/48/000000/university.png',
+      logo: '/cluster innovation centre, university of delhi.png',
       website: 'https://cic.du.ac.in/',
       description: 'Developed an AI chatbot using NLP models (Google-BERT, Sentence Transformers) and Pinecone for vector database to deliver precise answers from NCERT content for competitive exam (UPSC, SSC, etc). Built Django Web App enabling users to query questions and receive accurate responses efficiently. Optimized data pre-processing and query matching algorithms to enhance retrieval speed and accuracy.',
       achievements: [
@@ -86,7 +86,7 @@ const ExperienceSection = () => {
       position: 'Website & Digital Outreach Volunteer',
       date: 'May 2024 – Jul 2024',
       location: 'Hybrid, India',
-      logo: 'https://img.icons8.com/color/48/000000/community.png',
+      logo: '/sewa_international_logo.png',
       website: 'https://sewausa.org',
       description: 'Managed and maintained website on Wild Apricot, Update pages aligned with upcoming events and Programs. Improved website SEO health score from 45 to 75. Engaged in Grassroots Leadership Camp, co-organized SEWA FELLOWSHIP, and guided 120+ candidates.',
       achievements: [
@@ -130,7 +130,7 @@ const ExperienceSection = () => {
             <div className="p-5">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
-                  <img src={exp.logo} alt={exp.company} className="w-10 h-10 object-contain mr-3" />
+                  <img src={exp.logo} alt={exp.company} className="w-12 h-12 object-contain mr-3" />
                   <div>
                     <h3 className="font-bold text-base md:text-lg text-gray-800 dark:text-gray-100">{exp.company}</h3>
                     <p className="text-green-500 dark:text-green-400 font-medium text-sm md:text-base">{exp.position}</p>

@@ -147,11 +147,11 @@ const Header = () => {
         
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg">
           Hello! I'm Abhinav Kumar — <span className="text-green-500 dark:text-green-400">a creative technologist driven by innovation and purpose</span>.
-          Based in Delhi, I blend technology, design, and data to craft solutions that make a difference. With a B.Tech in Information Technology and Mathematical Innovation from the 
+          I blend technology, design, and data to craft solutions that make a difference. With a B.Tech in Information Technology and Mathematical Innovation from
           <span className="text-green-500 dark:text-green-400"> Cluster Innovation Centre, University of Delhi</span>, my work spans frontend development, AI-powered applications, data visualization, and user-centric design.
         </p>
         <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base md:text-lg mt-4">
-          I've built platforms that guide competitive exam aspirants, collaborated with global teams on production-ready web interfaces, and explored AI in education and accessibility. Whether it's building a chatbot with NLP or designing seamless digital experiences, I'm passionate about turning ideas into impactful tools.
+          I've built platforms that guide competitive exam aspirants, and explored AI in education and accessibility. Whether it's building a chatbot with NLP or designing seamless digital experiences, I'm passionate about turning ideas into impactful tools.
         </p>
       </div>
       

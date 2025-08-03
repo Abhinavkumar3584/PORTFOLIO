@@ -181,8 +181,8 @@ const Sidebar = () => {
         </div>
 
         {/* Contact Information */}
-        <div className="mb-6 space-y-3">
-          <h3 className="text-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Contact</h3>
+        <div className="mb-6 space-y-2">
+          <h3 className="text-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Contact</h3>
           {contactInfo.map((contact, index) => (
             <a
               key={index}
