@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ThemeContext } from '../context/ThemeContext';
 import profileImage from '../assets/images/abhi.jpg';
 
-const Sidebar = () => {
+const Sidebar = ({ showPdfModal, setShowPdfModal }) => {
   const { darkMode } = useContext(ThemeContext);
 
   const socialLinks = [
@@ -59,47 +60,8 @@ const Sidebar = () => {
     }
   ];
 
-  const handleDownload = async () => {
-    try {
-      // Multiple fallback approaches for Vercel deployment
-      const pdfPaths = [
-        `${process.env.PUBLIC_URL}/Abhinav_Kumar_Resume.pdf`,
-        '/Abhinav_Kumar_Resume.pdf',
-        './Abhinav_Kumar_Resume.pdf'
-      ];
-      
-      let pdfUrl = pdfPaths[0];
-      
-      // Try to fetch the PDF to ensure it exists
-      for (const path of pdfPaths) {
-        try {
-          const response = await fetch(path, { method: 'HEAD' });
-          if (response.ok) {
-            pdfUrl = path;
-            break;
-          }
-        } catch (e) {
-          continue;
-        }
-      }
-      
-      // Create download link
-      const link = document.createElement('a');
-      link.href = pdfUrl;
-      link.download = 'Abhinav_Kumar_Resume.pdf';
-      link.setAttribute('download', 'Abhinav_Kumar_Resume.pdf');
-      link.style.display = 'none';
-      
-      // Add to DOM, click, and remove
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-    } catch (error) {
-      console.error('Download failed:', error);
-      // Ultimate fallback: open in new tab
-      window.open('/Abhinav_Kumar_Resume.pdf', '_blank');
-    }
+  const handleDownload = () => {
+    setShowPdfModal(true);
   };
 
   return (
@@ -234,4 +196,81 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+// PDF Modal Component - Separate from Sidebar
+const PdfModal = ({ showPdfModal, setShowPdfModal }) => {
+  if (!showPdfModal) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4" style={{ zIndex: 999999 }}>
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl w-full max-w-6xl h-full max-h-[95vh] flex flex-col relative" style={{ zIndex: 1000000 }}>
+        {/* Modal Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+            Abhinav Kumar - Resume
+          </h3>
+          <div className="flex gap-2">
+            {/* Download Button */}
+            <button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/Abhinav_Kumar_Resume.pdf';
+                link.download = 'Abhinav_Kumar_Resume.pdf';
+                link.click();
+              }}
+              className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm flex items-center gap-2 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download PDF
+            </button>
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPdfModal(false)}
+              className="px-4 py-2 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm flex items-center gap-2 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              Close
+            </button>
+          </div>
+        </div>
+        
+        {/* PDF Viewer */}
+        <div className="flex-1 p-4 bg-gray-50 dark:bg-gray-900">
+          <div className="w-full h-full bg-white dark:bg-gray-800 rounded-lg shadow-inner overflow-hidden">
+            <iframe
+              src="/Abhinav_Kumar_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"
+              className="w-full h-full border-0"
+              title="Resume PDF"
+              frameBorder="0"
+            />
+          </div>
+        </div>
+      </div>
+      
+      {/* Click outside to close */}
+      <div 
+        className="absolute inset-0" 
+        style={{ zIndex: 999998 }}
+        onClick={() => setShowPdfModal(false)}
+      ></div>
+    </div>,
+    document.body
+  );
+};
+
+// Main Sidebar Component Export
+const SidebarWithModal = () => {
+  const [showPdfModal, setShowPdfModal] = useState(false);
+
+  return (
+    <>
+      <Sidebar showPdfModal={showPdfModal} setShowPdfModal={setShowPdfModal} />
+      <PdfModal showPdfModal={showPdfModal} setShowPdfModal={setShowPdfModal} />
+    </>
+  );
+};
+
+export default SidebarWithModal;

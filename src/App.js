@@ -28,7 +28,7 @@ function App() {
             {/* Main Content Area */}
             <div className="w-full md:w-3/4 flex flex-col gap-2 py-2 px-1 md:px-2 mobile-pb-safe">
               {/* Navigation */}
-              <div className="sticky top-2 z-40 dark:bg-gray-900">
+              <div className="sticky top-2 z-30 dark:bg-gray-900">
                 <Navbar />
               </div>
               
