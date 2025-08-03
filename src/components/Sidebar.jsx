@@ -59,37 +59,20 @@ const Sidebar = () => {
     }
   ];
 
-  const handleDownload = async () => {
-    try {
-      // Fetch the PDF file
-      const response = await fetch('/Abhinav_Kumar_Resume.pdf');
-      if (!response.ok) {
-        throw new Error('Failed to fetch PDF');
-      }
-      
-      // Convert response to blob
-      const blob = await response.blob();
-      
-      // Create blob URL
-      const url = window.URL.createObjectURL(blob);
-      
-      // Create download link
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Abhinav_Kumar_Resume.pdf';
-      
-      // Trigger download
-      document.body.appendChild(link);
-      link.click();
-      
-      // Cleanup
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Download failed:', error);
-      // Fallback: open in new tab
-      window.open('/Abhinav_Kumar_Resume.pdf', '_blank');
-    }
+  const handleDownload = () => {
+    // Use the PDF from public folder - this will work!
+    const pdfUrl = '/Abhinav_Kumar_Resume.pdf';
+    
+    // Create download link
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'Abhinav_Kumar_Resume.pdf';
+    link.target = '_blank'; // Also open in new tab as fallback
+    
+    // Add to DOM, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
