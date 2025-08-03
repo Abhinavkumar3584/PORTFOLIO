@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import profileImage from '../assets/images/abhi.jpg';
+import resumePDF from '../assets/RESUME.pdf';
 
 const Sidebar = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -61,8 +62,9 @@ const Sidebar = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Abhinav_Kumar_Resume.pdf';
+    link.href = resumePDF;
     link.download = 'Abhinav_Kumar_Resume.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
