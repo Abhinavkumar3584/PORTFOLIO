@@ -120,50 +120,6 @@ npm run build
 pdflatex -output-directory=src/components src/components/main.tex
 ```
 
-## 📱 Sections Overview
-
-### 🏠 Header
-- Professional introduction
-- Contact information
-- Social media links
-
-### 💡 Skills
-- Technical skills with proficiency levels
-- Programming languages
-- Frameworks and tools
-
-### 💼 Experience  
-- Professional work experience
-- Internships
-- Key achievements and responsibilities
-
-### 🚀 Projects
-- Featured projects with descriptions
-- Technologies used
-- Live demos and source code links
-
-### 🏆 Certifications
-- Professional certifications
-- Course completions
-- Achievement badges
-
-### 🎓 Education
-- Academic background
-- Degrees and qualifications
-- Relevant coursework
-
-### 🎯 Activities
-- Leadership roles
-- Volunteer work
-- Community involvement
-
-### 📷 Gallery
-- Professional photos
-- Event participation
-- Personal moments
-
-## ⚙️ Configuration
-
 ### Theme Customization
 Edit `tailwind.config.js` to customize colors, fonts, and spacing:
 
