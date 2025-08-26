@@ -1,4 +1,4 @@
-# 🚀 Abhinav Kumar - Portfolio Website
+# 🚀 Abhinav Kumar - Portfolio
 
 A modern, responsive portfolio website built with React and Tailwind CSS, showcasing my professional journey, skills, projects, and achievements.
 
