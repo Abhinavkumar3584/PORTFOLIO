@@ -1,18 +1,18 @@
 import React from 'react';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
-import SkillsSection from './components/SkillsSection';
-import ExperienceSection from './components/ExperienceSection';
-import ProjectsSection from './components/ProjectsSection';
-import CertificationsSection from './components/CertificationsSection';
-import EducationSection from './components/EducationSection';
-import HobbiesSection from './components/HobbiesSection';
-import ActivitiesSection from './components/ActivitiesSection';
-import GallerySection from './components/GallerySection';
-import Footer from './components/Footer';
-import BottomActions from './components/BottomActions';
-import { ThemeProvider } from './context/ThemeContext';
+import Header from './components/Header.jsx';
+import Navbar from './components/Navbar.jsx';
+import Sidebar from './components/Sidebar.jsx';
+import SkillsSection from './components/SkillsSection.jsx';
+import ExperienceSection from './components/ExperienceSection.jsx';
+import ProjectsSection from './components/ProjectsSection.jsx';
+import CertificationsSection from './components/CertificationsSection.jsx';
+import EducationSection from './components/EducationSection.jsx';
+import HobbiesSection from './components/HobbiesSection.jsx';
+import ActivitiesSection from './components/ActivitiesSection.jsx';
+import GallerySection from './components/GallerySection.jsx';
+import Footer from './components/Footer.jsx';
+import BottomActions from './components/BottomActions.jsx';
+import { ThemeProvider } from './context/ThemeContext.jsx';
 
 function App() {
   return (

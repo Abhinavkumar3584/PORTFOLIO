@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import nccLogo from '../assets/images/ncc.png';
 import beyondExamsLogo from '../assets/images/beyondexams.png';
+import certificateImage from '../assets/images/certificates/Abhinav Kumar.jpeg';
 
 const CertificationsSection = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -28,7 +29,7 @@ const CertificationsSection = () => {
         'Volunteer activities in Jaipur',
         'Community service and leadership development'
       ],
-      image: require('../assets/images/certificates/Abhinav Kumar.jpeg')
+      image: certificateImage
     },
     {
       name: 'Combined Annual Training Camp - (2023, 2024)',  
@@ -40,7 +41,7 @@ const CertificationsSection = () => {
         'Military training and discipline',
         'Leadership and teamwork development'
       ],
-      image: require('../assets/images/certificates/Abhinav Kumar.jpeg')
+      image: certificateImage
     },
     {
       name: 'All India UP Trekking Camp',
@@ -52,7 +53,7 @@ const CertificationsSection = () => {
         'Adventure training and endurance',
         'Mountain safety and survival skills'
       ],
-      image: require('../assets/images/certificates/Abhinav Kumar.jpeg')
+      image: certificateImage
     },
     {
       name: 'Hack2Educate Hackathon Participant',
@@ -64,7 +65,7 @@ const CertificationsSection = () => {
         'Developed innovative educational solutions',
         'Secured fourth position among participants'
       ],
-      image: require('../assets/images/certificates/Abhinav Kumar.jpeg')
+      image: certificateImage
     },
     {
       name: 'Geographic Information System Overview',
@@ -76,7 +77,7 @@ const CertificationsSection = () => {
         'Learned GIS fundamentals and applications',
         'Remote sensing and spatial analysis techniques'
       ],
-      image: require('../assets/images/certificates/Abhinav Kumar.jpeg')
+      image: certificateImage
     }
   ];
   return (

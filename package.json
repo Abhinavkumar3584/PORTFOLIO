@@ -1,26 +1,37 @@
 {
   "name": "portfolio-react",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A modern React portfolio website built with Vite and TailwindCSS",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "react-scripts start"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start": "vite"
   },
-  "keywords": [],
+  "keywords": ["portfolio", "react", "vite", "tailwindcss"],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.14",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
     "postcss": "^8.4.27",
     "postcss-preset-env": "^8.5.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-  "react-scripts": "^5.0.1",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "vite": "^7.1.2"
   },
   "browserslist": {
     "production": [
@@ -33,8 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@csstools/postcss-ic-unit": "^2.0.2"
   }
 }
