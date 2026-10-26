@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from '@/styles/portfolio.module.css';
 import { portfolioData, FreelanceItem } from '@/data/portfolioData';
-import { ExternalLink, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ExternalLink, CheckCircle2 } from 'lucide-react';
 import { GithubIcon } from '@/components/Icons';
 
 interface SideProjectsSectionProps {
@@ -31,16 +31,19 @@ export default function SideProjectsSection({ onShowToast }: SideProjectsSection
                   <span
                     className={styles.skillChip}
                     style={{
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                      backgroundColor: 'var(--accent-green-bg)',
                       color: 'var(--accent-green)',
-                      border: '1px solid rgba(16, 185, 129, 0.25)',
+                      border: '1px solid var(--accent-green-border)',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '3px',
-                      fontSize: '0.65rem'
+                      gap: '5px',
+                      fontSize: '0.65rem',
+                      fontWeight: 600,
+                      padding: '0.15rem 0.5rem',
+                      borderRadius: '9999px',
                     }}
                   >
-                    <Sparkles size={10} />
+                    <span className="pulsing-dot" style={{ width: 6, height: 6 }} />
                     <span>{item.status}</span>
                   </span>
                 )}
@@ -68,7 +71,7 @@ export default function SideProjectsSection({ onShowToast }: SideProjectsSection
                     title="Open Live Preview"
                     onClick={() => onShowToast(`Opening live demo for ${item.title}`)}
                   >
-                    <ExternalLink size={13} />
+                    <ExternalLink size={13} color="var(--accent-green)" />
                   </a>
                 )}
               </div>

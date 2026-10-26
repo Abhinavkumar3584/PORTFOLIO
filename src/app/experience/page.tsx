@@ -127,12 +127,15 @@ export default function ExperiencePage() {
 
         {/* Full Experience Timeline */}
         <div className={styles.timelineList}>
-          {filteredExperiences.map((item: ExperienceItem) => {
+          {filteredExperiences.map((item: ExperienceItem, idx: number) => {
             const isExpanded = !!expandedIds[item.id];
 
             return (
               <div key={item.id} className={styles.timelineItem}>
-                <span className={styles.timelineDot} />
+                <span
+                  className={styles.timelineDot}
+                  style={idx === 0 ? { backgroundColor: 'var(--accent-green)', boxShadow: '0 0 0 3px var(--accent-green-bg)' } : undefined}
+                />
 
                 {/* Company & Period */}
                 <div className={styles.timelineCompanyTitle}>

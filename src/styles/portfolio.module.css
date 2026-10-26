@@ -1261,28 +1261,26 @@
   color: var(--text-muted);
 }
 
-.footerCatWrapper {
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.2s ease;
-}
-
-.footerCatWrapper:hover {
-  transform: scale(1.1);
-}
-
-.catPurrBubble {
-  position: absolute;
-  top: -24px;
-  right: 0;
+.backToTopBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 9999px;
   background-color: var(--bg-pill);
   border: 1px solid var(--border-color);
-  border-radius: 9999px;
-  padding: 0.15rem 0.5rem;
-  font-size: 0.6875rem;
-  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backToTopBtn:hover {
+  background-color: var(--bg-pill-hover);
   color: var(--text-primary);
-  animation: fadeIn 0.2s ease;
+  border-color: var(--text-muted);
+  transform: translateY(-2px);
 }
 
 @keyframes fadeIn {

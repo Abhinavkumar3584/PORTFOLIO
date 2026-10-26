@@ -35,13 +35,16 @@ export default function ExperienceSection({ limit, showViewAll = true }: Experie
       </div>
 
       <div className={styles.timelineList}>
-        {displayedExperiences.map((item: ExperienceItem) => {
+        {displayedExperiences.map((item: ExperienceItem, idx: number) => {
           const isExpanded = !!expandedIds[item.id];
 
           return (
             <div key={item.id} className={styles.timelineItem}>
-              {/* Timeline marker bullet */}
-              <span className={styles.timelineDot} />
+              {/* Timeline marker bullet with green active pulse on most recent */}
+              <span
+                className={styles.timelineDot}
+                style={idx === 0 ? { backgroundColor: 'var(--accent-green)', boxShadow: '0 0 0 3px var(--accent-green-bg)' } : undefined}
+              />
 
               {/* Company Title */}
               <div className={styles.timelineCompanyTitle}>

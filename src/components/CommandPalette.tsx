@@ -91,7 +91,7 @@ export default function CommandPalette({ isOpen, onClose, onShowToast }: Command
     },
     {
       id: 'nav-achievements',
-      title: 'Go to Achievements & NCC',
+      title: 'Go to Achievements & Skills',
       category: 'Navigation',
       icon: <Hash size={14} />,
       action: () => {

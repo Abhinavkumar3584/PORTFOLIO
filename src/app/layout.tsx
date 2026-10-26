@@ -36,7 +36,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Abhinav Kumar", url: "https://github.com/abhikumar3584" }],
   icons: {
-    icon: "/profile1.jpeg",
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    apple: '/apple-icon.png',
   },
   openGraph: {
     title: "Abhinav Kumar | Full Stack & AI Developer",

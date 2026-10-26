@@ -99,7 +99,7 @@ export default function Home() {
 
         <hr className={styles.sectionDivider} />
 
-        {/* Honors, NCC & Skills Matrix */}
+        {/* Honors & Skills Matrix */}
         <MoreSection />
 
         <hr className={styles.sectionDivider} />

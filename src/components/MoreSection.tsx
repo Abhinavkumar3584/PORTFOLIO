@@ -3,18 +3,18 @@
 import React, { useState } from 'react';
 import styles from '@/styles/portfolio.module.css';
 import { portfolioData } from '@/data/portfolioData';
-import { Award, Shield, Layers, CheckCircle2, Trophy, Star } from 'lucide-react';
+import { Award, Layers, CheckCircle2, Trophy, Star } from 'lucide-react';
 
 export default function MoreSection() {
-  const { achievements, ncc, skills, certifications } = portfolioData;
-  const [activeTab, setActiveTab] = useState<'achievements' | 'ncc' | 'skills' | 'certifications'>('achievements');
+  const { achievements, skills, certifications } = portfolioData;
+  const [activeTab, setActiveTab] = useState<'achievements' | 'skills' | 'certifications'>('achievements');
 
   return (
     <section id="achievements" style={{ marginTop: '2.5rem' }}>
       <div className={styles.sectionHeader}>
         <h2 className={styles.sectionTitle}>
           <Trophy size={18} />
-          <span>Honors, NCC & Skills</span>
+          <span>Honors & Skills</span>
         </h2>
       </div>
 
@@ -22,7 +22,6 @@ export default function MoreSection() {
       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
         {[
           { id: 'achievements', label: 'Achievements', icon: <Award size={13} /> },
-          { id: 'ncc', label: 'NCC Leadership', icon: <Shield size={13} /> },
           { id: 'skills', label: 'Skills Matrix', icon: <Layers size={13} /> },
           { id: 'certifications', label: 'Certifications', icon: <Star size={13} /> }
         ].map((tab) => (
@@ -69,37 +68,6 @@ export default function MoreSection() {
                 </div>
               </div>
             ))}
-          </div>
-        )}
-
-        {/* NCC Tab */}
-        {activeTab === 'ncc' && (
-          <div id="ncc" style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--text-primary)' }}>
-                  National Cadet Corps (NCC) — Rank: {ncc.rank}
-                </h4>
-                <p style={{ fontSize: '0.775rem', color: 'var(--text-muted)', fontFamily: 'var(--font-geist-mono), monospace' }}>
-                  {ncc.period} • {ncc.location}
-                </p>
-              </div>
-              <span
-                className={styles.skillChip}
-                style={{ backgroundColor: 'rgba(16, 185, 129, 0.1)', color: 'var(--accent-green)', border: '1px solid rgba(16, 185, 129, 0.25)', fontWeight: 600 }}
-              >
-                Grade &apos;A&apos; Distinction
-              </span>
-            </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
-              {ncc.highlights.map((point, idx) => (
-                <div key={idx} className={styles.timelineBulletItem}>
-                  <span style={{ color: 'var(--accent-green)' }}>✦</span>
-                  <span>{point}</span>
-                </div>
-              ))}
-            </div>
           </div>
         )}
 

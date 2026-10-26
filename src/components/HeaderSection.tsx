@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from '@/styles/portfolio.module.css';
 import { portfolioData } from '@/data/portfolioData';
-import { Sparkles, Eye, Check } from 'lucide-react';
+import { Sparkles, Check, Heart } from 'lucide-react';
 
 interface HeaderSectionProps {
   onShowToast: (msg: string) => void;
@@ -16,7 +16,7 @@ export default function HeaderSection({ onShowToast }: HeaderSectionProps) {
 
   const handleIncrementViews = () => {
     setViewCount((prev: number) => prev + 1);
-    onShowToast("Thanks for visiting my portfolio!");
+    onShowToast("Thanks for visiting my portfolio! ❤️");
   };
 
   return (
@@ -56,21 +56,36 @@ export default function HeaderSection({ onShowToast }: HeaderSectionProps) {
               {profile.age} • Engineer & Full-Stack AI Developer
             </p>
 
-            <div className={styles.profileStatusRow}>
-              <span className="pulsing-dot" />
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '0.2rem 0.55rem',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--accent-green-bg)',
+                border: '1px solid var(--accent-green-border)',
+                fontSize: '0.75rem',
+                color: 'var(--accent-green)',
+                fontWeight: 500,
+                marginTop: '0.35rem',
+              }}
+            >
+              <span className="pulsing-dot" style={{ width: 6, height: 6 }} />
               <span>{profile.statusText}</span>
             </div>
           </div>
         </div>
 
-        {/* View counter badge */}
+        {/* View counter badge with red heart accent */}
         <button
           onClick={handleIncrementViews}
           className={styles.visitorCountBadge}
           title="Click to appreciate!"
           aria-label="View count"
+          style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}
         >
-          <Eye size={13} />
+          <Heart size={12} fill="var(--accent-red)" color="var(--accent-red)" />
           <span>{viewCount.toLocaleString()}</span>
         </button>
       </div>

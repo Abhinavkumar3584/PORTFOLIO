@@ -34,16 +34,19 @@ export default function ProjectsSection({ onShowToast, limit, showViewAll = true
                     <span
                       className={styles.skillChip}
                       style={{
-                        backgroundColor: 'rgba(2, 132, 199, 0.1)',
-                        color: 'var(--accent-blue)',
-                        border: '1px solid rgba(2, 132, 199, 0.25)',
+                        backgroundColor: 'var(--accent-red-bg)',
+                        color: 'var(--accent-red)',
+                        border: '1px solid var(--accent-red-border)',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '3px',
-                        fontSize: '0.65rem'
+                        fontSize: '0.65rem',
+                        fontWeight: 600,
+                        padding: '0.15rem 0.5rem',
+                        borderRadius: '9999px',
                       }}
                     >
-                      <Sparkles size={10} />
+                      <Sparkles size={10} color="var(--accent-red)" />
                       <span>Featured</span>
                     </span>
                   )}
@@ -71,7 +74,7 @@ export default function ProjectsSection({ onShowToast, limit, showViewAll = true
                       title="Open Live Preview"
                       onClick={() => onShowToast(`Opening live demo of ${project.title}`)}
                     >
-                      <ExternalLink size={13} />
+                      <ExternalLink size={13} color="var(--accent-green)" />
                     </a>
                   )}
                 </div>

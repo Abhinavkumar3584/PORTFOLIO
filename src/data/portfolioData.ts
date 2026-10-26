@@ -82,7 +82,7 @@ export const portfolioData = {
     },
     aboutBullets: [
       "I'm a builder who loves figuring things out by creating along the way. I enjoy working at the intersection of AI, full-stack systems, and real-world impact — whether that's building conversational AI platforms, scalable web architectures, or turning raw ideas into delightful products.",
-      "At my core, I'm deeply curious not just about code, but about how technology empowers people to think, learn, and excel. Pursuing B.Tech in IT & Mathematical Innovation at Cluster Innovation Centre, University of Delhi, combining disciplined leadership from commanding 100+ cadets in NCC with state-level AI buildathon achievements."
+      "At my core, I'm deeply curious not just about code, but about how technology empowers people to think, learn, and excel. Pursuing B.Tech in IT & Mathematical Innovation at Cluster Innovation Centre, University of Delhi, with state-level AI buildathon achievements."
     ],
     nowPlaying: {
       title: "Circe",
@@ -94,7 +94,7 @@ export const portfolioData = {
   },
 
   socials: [
-    { name: "GitHub", url: "https://github.com/abhikumar3584", icon: "github" },
+    { name: "GitHub", url: "https://github.com/Abhinavkumar3584", icon: "github" },
     { name: "LinkedIn", url: "https://linkedin.com/in/abhikumar3584", icon: "linkedin" },
     { name: "Mail", url: "mailto:abhikumar3584@gmail.com", icon: "mail", value: "abhikumar3584@gmail.com" },
     { name: "Resume", url: "/resume.pdf", icon: "resume", isDownload: true }
@@ -105,7 +105,7 @@ export const portfolioData = {
     phone: "+91-7500024959",
     location: "Delhi, India",
     linkedin: "https://linkedin.com/in/abhikumar3584",
-    github: "https://github.com/abhikumar3584"
+    github: "https://github.com/Abhinavkumar3584"
   },
 
   experiences: [
@@ -245,50 +245,49 @@ export const portfolioData = {
 
   freelanceAndSideProjects: [
     {
-      id: "omnichat-ai",
-      title: "OmniChat AI - Conversational Support Suite",
-      clientOrType: "Freelance Project • SaaS Agency",
-      period: "2024 – 2025",
-      status: "Live",
-      description: "Architected a custom conversational AI assistant utilizing LangChain and OpenAI API with context-aware retrieval and automated customer support escalation.",
-      deliverables: [
-        "Automated 65%+ common inquiries with sub-second hybrid semantic RAG lookup.",
-        "Integrated multi-channel webhook webhooks (Telegram, WhatsApp & Web Embed)."
-      ],
-      tools: ["Next.js", "LangChain", "OpenAI API", "Tailwind CSS", "Supabase", "TypeScript"],
-      liveUrl: "https://github.com/abhikumar3584",
-      githubUrl: "https://github.com/abhikumar3584",
-      featured: true
-    },
-    {
-      id: "speedcv-ai",
-      title: "SpeedCV - ATS Resume Intelligence Micro-SaaS",
-      clientOrType: "Side Project • Developer Tool",
+      id: "gestss",
+      title: "GESTSS — Business Website",
+      clientOrType: "Client Project • Business Platform",
       period: "2024",
       status: "Live",
-      description: "Engineered an AI-assisted resume parser evaluating technical resumes against industry standard ATS parsing rules with instant actionable feedback.",
+      description: "Developed a client website using React/Next.js, focusing on responsive layouts and a consistent user interface.",
       deliverables: [
-        "Built client-side PDF parser extracting complex dual-column technical resumes.",
-        "Custom heuristic scoring algorithm rating action verbs, metrics, and tech stack synergy."
+        "Engineered modular, mobile-first responsive components with Next.js & React.",
+        "Delivered cross-device UI consistency, high-performance page loads, and intuitive navigation."
       ],
-      tools: ["React 19", "TypeScript", "Python FastAPI", "NLP", "Tailwind CSS"],
-      githubUrl: "https://github.com/abhikumar3584",
+      tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive Design"],
+      liveUrl: "https://gestss.com/",
       featured: true
     },
     {
-      id: "canadian-ecommerce-ui",
-      title: "High-Performance Headless E-Commerce Storefront",
-      clientOrType: "Freelance Client (Canada)",
-      period: "2023 – 2024",
-      status: "Completed",
-      description: "Translated high-fidelity Figma design systems into pixel-perfect, accessible React components with multi-currency checkout and sub-second page transitions.",
+      id: "the-csr-journal",
+      title: "The CSR Journal — Digital News Platform",
+      clientOrType: "Digital News Platform • Media Portal",
+      period: "2024",
+      status: "Live",
+      description: "Developed a news and media website using React/Next.js to present editorial content in a structured, user-friendly format.",
       deliverables: [
-        "Attained 98+ Google Lighthouse mobile performance score with optimized assets.",
-        "Engineered smooth micro-interactions, responsive drawer carts, and dynamic inventory badges."
+        "Built high-traffic digital news architecture for presenting editorial stories and media content.",
+        "Structured rich-text readability, category navigation, and fast server-rendered page loads."
       ],
-      tools: ["Next.js", "React", "Figma", "Stripe API", "SCSS Modules"],
-      liveUrl: "https://github.com/abhikumar3584",
-      featured: false
+      tools: ["React", "Next.js", "Editorial CMS", "SEO", "Responsive UI"],
+      liveUrl: "https://thecsrjournal.com/",
+      featured: true
+    },
+    {
+      id: "dr-sony",
+      title: "Dr. Sony — Professional Website",
+      clientOrType: "Professional Portfolio • Healthcare Website",
+      period: "2024",
+      status: "Live",
+      description: "Developed a professional website using React/Next.js with a focus on clean design, responsive layouts, and intuitive navigation.",
+      deliverables: [
+        "Designed and deployed an elegant professional portfolio showcasing clinical expertise and patient services.",
+        "Delivered sub-second navigation, accessible appointment inquiries, and seamless mobile responsiveness."
+      ],
+      tools: ["React", "Next.js", "Vercel", "Tailwind CSS", "UI/UX"],
+      liveUrl: "https://drsony.vercel.app/",
+      featured: true
     }
   ] as FreelanceItem[],
 
@@ -360,24 +359,10 @@ export const portfolioData = {
     }
   ] as AchievementItem[],
 
-  ncc: {
-    rank: "CADET",
-    period: "Nov 2022 – April 2025",
-    location: "Delhi, India",
-    highlights: [
-      "Successfully passed National Cadet Corps Certificate - C with 'A' Grade (Highest Distinction).",
-      "Successfully passed National Cadet Corps Certificate - B with 'B' Grade.",
-      "Completed All India UP Trekking Camp holding the operational rank of Company 2IC, commanding and navigating a detachment of 101 cadets.",
-      "Completed Combined Annual Training Camp (CATC 2023, 2024), leading and mentoring 50+ cadets in field drills and discipline."
-    ]
-  },
-
   certifications: [
     { name: "CCC Examination Certification", issuer: "NIELIT", date: "14 Nov, 2025" },
     { name: "OpenAI Academy x NxtWave Regional Buildathon", issuer: "OpenAI / NxtWave", date: "22 Nov - 23 Nov, 2025" },
     { name: "Grassroot Leadership Camp Volunteer", issuer: "Sewa International (Jaipur)", date: "21 June - 22 June, 2025" },
-    { name: "National Cadet Corps: Certificate C ('A' Grade)", issuer: "NCC Ministry of Defence", date: "19 May, 2025", grade: "Grade A" },
-    { name: "National Cadet Corps: Certificate B ('B' Grade)", issuer: "NCC Ministry of Defence", date: "26 June, 2024", grade: "Grade B" },
     { name: "Geographic Information System (GIS) Overview", issuer: "IIRS (ISRO) E-Learning", date: "Oct 2022" }
   ] as CertificationItem[]
 };
