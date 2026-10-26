@@ -78,120 +78,243 @@
   font-family: var(--font-geist-mono), monospace;
 }
 
-/* Top Navigation Bar */
-.navbarSticky {
+/* Floating Top Navigation Bar */
+.navbarWrapper {
   position: sticky;
-  top: 0;
+  top: 0.75rem;
   z-index: 50;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background-color: var(--navbar-bg);
-  border-bottom: 1px solid var(--border-subtle);
-  transition: all 0.2s ease;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+  pointer-events: none;
 }
 
-.navbarContent {
+.navbarFloating {
+  pointer-events: auto;
+  position: relative;
+  width: 100%;
   max-width: 680px;
-  margin: 0 auto;
-  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  background-color: var(--nav-dock-bg);
+  border: 1px solid var(--nav-dock-border);
+  box-shadow: var(--nav-dock-shadow);
+  padding: 0.4rem 0.65rem 0.4rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .navLogo {
   font-weight: 800;
   font-size: 1.125rem;
   letter-spacing: -0.04em;
-  color: var(--text-primary);
+  color: var(--nav-dock-text);
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  transition: opacity 0.2s ease;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  user-select: none;
 }
 
 .navLogo:hover {
-  opacity: 0.8;
+  opacity: 0.85;
+  transform: scale(1.05);
 }
 
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.25rem;
 }
 
 .navLink {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  font-weight: 450;
-  transition: color 0.15s ease;
-  position: relative;
+  font-size: 0.825rem;
+  color: var(--nav-dock-text-muted);
+  font-weight: 500;
+  padding: 0.35rem 0.65rem;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .navLink:hover {
-  color: var(--text-primary);
+  color: var(--nav-dock-text);
+  background-color: var(--nav-dock-item-hover);
 }
 
-@media (max-width: 640px) {
-  .navLinks {
-    gap: 0.65rem;
-  }
-  .navLink {
-    font-size: 0.78rem;
-  }
+.navLinkActive {
+  color: var(--nav-dock-text);
+  background-color: var(--nav-dock-item-active);
+  font-weight: 600;
 }
 
 .navRightActions {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .searchTriggerBtn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   padding: 0.35rem 0.65rem;
-  border-radius: 8px;
-  background-color: var(--bg-pill);
-  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  background-color: var(--nav-dock-pill-bg);
+  border: 1px solid var(--nav-dock-border);
   font-size: 0.75rem;
-  color: var(--text-secondary);
+  color: var(--nav-dock-text-muted);
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .searchTriggerBtn:hover {
-  background-color: var(--bg-pill-hover);
-  color: var(--text-primary);
-  border-color: var(--text-muted);
+  background-color: var(--nav-dock-item-hover);
+  color: var(--nav-dock-text);
 }
 
 .searchKbd {
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
+  background-color: var(--nav-dock-kbd-bg);
+  border: 1px solid var(--nav-dock-border);
+  color: var(--nav-dock-text-muted);
+  font-weight: 600;
 }
 
 .iconBtn {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-pill);
-  border: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  background-color: var(--nav-dock-pill-bg);
+  border: 1px solid var(--nav-dock-border);
+  color: var(--nav-dock-text);
+  cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .iconBtn:hover {
-  background-color: var(--bg-pill-hover);
-  color: var(--text-primary);
+  background-color: var(--nav-dock-item-hover);
+  transform: scale(1.06);
+}
+
+/* Mobile Menu Toggle Button */
+.mobileMenuBtn {
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--nav-dock-pill-bg);
+  border: 1px solid var(--nav-dock-border);
+  color: var(--nav-dock-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mobileMenuBtn:hover {
+  background-color: var(--nav-dock-item-hover);
+  transform: scale(1.06);
+}
+
+/* Mobile Dropdown Menu Card */
+.mobileMenuCard {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background-color: var(--nav-dock-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--nav-dock-border);
+  border-radius: 20px;
+  box-shadow: var(--nav-dock-shadow);
+  padding: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  animation: mobileMenuSlide 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: auto;
+  z-index: 55;
+}
+
+@keyframes mobileMenuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.mobileMenuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  color: var(--nav-dock-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.mobileMenuItem:hover,
+.mobileMenuItemActive {
+  background-color: var(--nav-dock-item-hover);
+  color: var(--nav-dock-text);
+  font-weight: 600;
+}
+
+.mobileMenuIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: var(--nav-dock-pill-bg);
+  color: var(--nav-dock-text);
+}
+
+@media (max-width: 680px) {
+  .navLinks {
+    display: none;
+  }
+  .mobileMenuBtn {
+    display: flex;
+  }
+  .searchKbd {
+    display: none;
+  }
+  .searchTriggerBtn {
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+  }
+  .navbarWrapper {
+    top: 0.5rem;
+    padding: 0 0.75rem;
+  }
+  .navbarFloating {
+    padding: 0.35rem 0.55rem 0.35rem 0.85rem;
+  }
 }
 
 /* Profile Card */
@@ -499,8 +622,24 @@
   image-rendering: crisp-edges;
 }
 
-/* Sticky Right Social Dock */
-/* Sticky Right Social Dock */
+/* Frosted Scroll Blur Overlay at Bottom */
+.bottomScrollBlur {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 85px;
+  pointer-events: none;
+  z-index: 45;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.65) 45%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.65) 45%, transparent 100%);
+  background: var(--bottom-fade-color);
+  transition: background 0.25s ease;
+}
+
+/* Inverted Floating Social Dock */
 .stickySocialDock {
   position: fixed;
   /* Attach closely to the right side of the centered portfolio container (max-width: 680px) */
@@ -513,18 +652,18 @@
   align-items: center;
   gap: 0.35rem;
   padding: 0.45rem 0.35rem;
-  background-color: var(--navbar-bg);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid var(--border-color);
+  background-color: var(--nav-dock-bg);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid var(--nav-dock-border);
   border-radius: 9999px;
-  box-shadow: var(--shadow-md);
-  transition: all 0.25s ease;
+  box-shadow: var(--nav-dock-shadow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .stickySocialDock:hover {
-  border-color: var(--text-muted);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-50%) scale(1.02);
+  border-color: var(--nav-dock-border);
 }
 
 .dockItemWrapper {
@@ -540,7 +679,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: var(--nav-dock-text);
   background-color: transparent;
   transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   text-decoration: none;
@@ -548,8 +687,8 @@
 }
 
 .dockIconBtn:hover {
-  background-color: var(--bg-pill-hover);
-  color: var(--text-primary);
+  background-color: var(--nav-dock-item-hover);
+  color: var(--accent-blue);
   transform: scale(1.12);
 }
 
@@ -559,8 +698,9 @@
   left: calc(100% + 10px);
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--text-primary);
-  color: var(--bg-page);
+  background-color: var(--nav-dock-tooltip-bg);
+  color: var(--nav-dock-tooltip-text);
+  border: 1px solid var(--nav-dock-border);
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   font-size: 0.725rem;
@@ -570,7 +710,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.15s ease, transform 0.15s ease;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--nav-dock-shadow);
   z-index: 70;
 }
 
@@ -582,7 +722,7 @@
   transform: translateY(-50%);
   border-width: 4px;
   border-style: solid;
-  border-color: transparent var(--text-primary) transparent transparent;
+  border-color: transparent var(--nav-dock-tooltip-bg) transparent transparent;
 }
 
 .dockItemWrapper:hover .dockTooltip {
@@ -603,7 +743,7 @@
   .dockTooltip::after {
     left: 100%;
     right: auto;
-    border-color: transparent transparent transparent var(--text-primary);
+    border-color: transparent transparent transparent var(--nav-dock-tooltip-bg);
   }
   .dockItemWrapper:hover .dockTooltip {
     transform: translateY(-50%) translateX(-2px);
@@ -618,8 +758,12 @@
     right: auto;
     transform: translateX(-50%);
     flex-direction: row;
-    padding: 0.35rem 0.5rem;
+    padding: 0.35rem 0.55rem;
     border-radius: 9999px;
+  }
+
+  .stickySocialDock:hover {
+    transform: translateX(-50%) scale(1.03);
   }
 
   .dockIconBtn:hover {
@@ -639,7 +783,7 @@
     right: auto;
     top: 100%;
     transform: translateX(-50%);
-    border-color: var(--text-primary) transparent transparent transparent;
+    border-color: var(--nav-dock-tooltip-bg) transparent transparent transparent;
   }
 
   .dockItemWrapper:hover .dockTooltip {

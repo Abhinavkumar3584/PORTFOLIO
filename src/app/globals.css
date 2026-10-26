@@ -25,6 +25,20 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
   --navbar-bg: rgba(255, 255, 255, 0.88);
+
+  /* Inverted Floating Nav & Bottom Social Dock (Dark on Light page) */
+  --nav-dock-bg: rgba(18, 20, 26, 0.90);
+  --nav-dock-border: rgba(255, 255, 255, 0.12);
+  --nav-dock-text: #ffffff;
+  --nav-dock-text-muted: #a1a1aa;
+  --nav-dock-item-hover: rgba(255, 255, 255, 0.12);
+  --nav-dock-item-active: rgba(255, 255, 255, 0.20);
+  --nav-dock-pill-bg: rgba(255, 255, 255, 0.08);
+  --nav-dock-kbd-bg: rgba(255, 255, 255, 0.12);
+  --nav-dock-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.18);
+  --nav-dock-tooltip-bg: #111827;
+  --nav-dock-tooltip-text: #ffffff;
+  --bottom-fade-color: rgba(255, 255, 255, 0.85);
 }
 
 [data-theme='dark'] {
@@ -54,6 +68,20 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.55);
   --navbar-bg: rgba(9, 9, 11, 0.88);
+
+  /* Inverted Floating Nav & Bottom Social Dock (White on Dark page) */
+  --nav-dock-bg: rgba(255, 255, 255, 0.94);
+  --nav-dock-border: rgba(0, 0, 0, 0.08);
+  --nav-dock-text: #0f172a;
+  --nav-dock-text-muted: #475569;
+  --nav-dock-item-hover: rgba(15, 23, 42, 0.08);
+  --nav-dock-item-active: rgba(15, 23, 42, 0.15);
+  --nav-dock-pill-bg: rgba(15, 23, 42, 0.06);
+  --nav-dock-kbd-bg: rgba(15, 23, 42, 0.08);
+  --nav-dock-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6), 0 0 24px rgba(255, 255, 255, 0.2);
+  --nav-dock-tooltip-bg: #09090b;
+  --nav-dock-tooltip-text: #fafafa;
+  --bottom-fade-color: rgba(9, 9, 11, 0.85);
 }
 
 * {

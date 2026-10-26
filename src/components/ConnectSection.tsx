@@ -50,7 +50,11 @@ export default function ConnectSection({ onShowToast }: ConnectSectionProps) {
   };
 
   return (
-    <aside className={styles.stickySocialDock} aria-label="Social connections">
+    <>
+      {/* Frosted Gradient Blur Overlay for smooth scrolling */}
+      <div className={styles.bottomScrollBlur} aria-hidden="true" />
+
+      <aside className={styles.stickySocialDock} aria-label="Social connections">
       {socials.map((item) => (
         <div key={item.name} className={styles.dockItemWrapper}>
           <a
@@ -83,5 +87,6 @@ export default function ConnectSection({ onShowToast }: ConnectSectionProps) {
         <span className={styles.dockTooltip}>Call</span>
       </div>
     </aside>
-  );
+  </>
+);
 }
