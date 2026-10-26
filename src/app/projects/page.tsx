@@ -12,26 +12,17 @@ import { ArrowLeft, Sparkles, ExternalLink, Search, Code2, CheckCircle2 } from '
 import { GithubIcon } from '@/components/Icons';
 
 export default function ProjectsPage() {
-  const { projects, freelanceAndSideProjects } = portfolioData;
+  const { projects } = portfolioData;
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedFilter, setSelectedFilter] = useState<'all' | 'ai' | 'fullstack'>('all');
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
   };
 
+  // Text search query
   const filteredProjects = projects.filter((project: ProjectItem) => {
-    // Category filter
-    if (selectedFilter === 'ai' && !project.tools.some(t => t.toLowerCase().includes('ai') || t.toLowerCase().includes('chatbot') || t.toLowerCase().includes('model'))) {
-      return false;
-    }
-    if (selectedFilter === 'fullstack' && !project.tools.some(t => t.toLowerCase().includes('mern') || t.toLowerCase().includes('react') || t.toLowerCase().includes('next'))) {
-      return false;
-    }
-
-    // Text search query
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       const matchTitle = project.title.toLowerCase().includes(q);
@@ -127,34 +118,6 @@ export default function ProjectsPage() {
               }}
             />
           </div>
-
-          {/* Filter Pills */}
-          <div style={{ display: 'flex', gap: '0.35rem' }}>
-            {[
-              { id: 'all', label: 'All Projects' },
-              { id: 'ai', label: 'AI Systems' },
-              { id: 'fullstack', label: 'Full Stack' },
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => {
-                  setSelectedFilter(cat.id as 'all' | 'ai' | 'fullstack');
-                  showToast(`Filter: ${cat.label}`);
-                }}
-                className={styles.skillChip}
-                style={{
-                  backgroundColor: selectedFilter === cat.id ? 'var(--text-primary)' : 'var(--bg-pill)',
-                  color: selectedFilter === cat.id ? 'var(--bg-page)' : 'var(--text-secondary)',
-                  fontWeight: selectedFilter === cat.id ? 600 : 400,
-                  cursor: 'pointer',
-                  padding: '0.3rem 0.65rem',
-                  borderRadius: '6px',
-                }}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         <hr className={styles.sectionDivider} />
@@ -243,7 +206,7 @@ export default function ProjectsPage() {
 
           {filteredProjects.length === 0 && (
             <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-muted)' }}>
-              No projects match "{searchQuery}". Try searching with a different term!
+              No projects match &ldquo;{searchQuery}&rdquo;. Try searching with a different term!
             </div>
           )}
         </div>

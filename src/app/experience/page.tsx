@@ -14,7 +14,6 @@ export default function ExperiencePage() {
   const { experiences } = portfolioData;
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [filterType, setFilterType] = useState<string>('all');
 
   // All experiences open by default on the dedicated page
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
@@ -24,7 +23,6 @@ export default function ExperiencePage() {
     chegg: true,
     beyondexams: true,
   });
-
   const showToast = (msg: string) => {
     setToastMessage(msg);
   };
@@ -35,14 +33,6 @@ export default function ExperiencePage() {
       [id]: !prev[id]
     }));
   };
-
-  const filteredExperiences = experiences.filter((item: ExperienceItem) => {
-    if (filterType === 'all') return true;
-    if (filterType === 'internship') return item.type.toLowerCase().includes('intern');
-    if (filterType === 'remote') return item.location.toLowerCase().includes('remote') || item.type.toLowerCase().includes('remote');
-    if (filterType === 'ai') return item.skills.some(s => s.toLowerCase().includes('ai') || s.toLowerCase().includes('machine learning') || s.toLowerCase().includes('python'));
-    return true;
-  });
 
   return (
     <main className={styles.frameWrapper}>
@@ -92,42 +82,13 @@ export default function ExperiencePage() {
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.6 }}>
             A complete chronological timeline of my professional roles, engineering internships, and subject-matter contributions across AI solutions and full-stack web architectures.
           </p>
-
-          {/* Filter Chips */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '1rem' }}>
-            {[
-              { id: 'all', label: 'All Roles (5)' },
-              { id: 'internship', label: 'Internships' },
-              { id: 'remote', label: 'Remote / Global' },
-              { id: 'ai', label: 'AI & Data Systems' },
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => {
-                  setFilterType(tab.id);
-                  showToast(`Filter: ${tab.label}`);
-                }}
-                className={styles.skillChip}
-                style={{
-                  backgroundColor: filterType === tab.id ? 'var(--text-primary)' : 'var(--bg-pill)',
-                  color: filterType === tab.id ? 'var(--bg-page)' : 'var(--text-secondary)',
-                  fontWeight: filterType === tab.id ? 600 : 400,
-                  cursor: 'pointer',
-                  padding: '0.3rem 0.65rem',
-                  borderRadius: '6px',
-                }}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
         </div>
 
         <hr className={styles.sectionDivider} />
 
         {/* Full Experience Timeline */}
         <div className={styles.timelineList}>
-          {filteredExperiences.map((item: ExperienceItem, idx: number) => {
+          {experiences.map((item: ExperienceItem, idx: number) => {
             const isExpanded = !!expandedIds[item.id];
 
             return (
